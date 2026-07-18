@@ -14,7 +14,7 @@ Skill source: [`skills/imagegen-transparent`](./skills/imagegen-transparent/)
 
 ## Image generator compatibility
 
-The skill uses **Codex's built-in ImageGen by default**. ImageGen is the default adapter, not a hard dependency of the transparency pipeline.
+**Default implementation dependency:** Codex's built-in ImageGen supplies the generated source image. ImageGen is the first-party adapter used by this skill, while the chroma-key extraction pipeline remains independent of the generator.
 
 [`agents/openai.yaml`](./skills/imagegen-transparent/agents/openai.yaml) provides Codex-facing display metadata and a default invocation prompt. Other compatible agents can ignore this file and use `SKILL.md` directly.
 
@@ -42,7 +42,7 @@ The example request supplied four blue engraved snowflake designs as a style-and
 Process:
 
 1. Generate exactly 16 cobalt-blue crystals in a strict 4×4 layout on `#00ff00`.
-2. Remove the sampled background using a soft matte and despill.
+2. Sample the generated border color (`#05ef04` in this run), then remove it using a soft matte and despill.
 3. Apply a 1 px edge contraction after detecting a faint green fringe.
 4. Pad the result to 1256×1256, giving 16 cells of 314×314 px.
 5. Confirm RGBA output and four fully transparent corners.
@@ -51,9 +51,10 @@ Prompt summary:
 
 > Match the reference's cobalt-blue engraved ice-crystal style. Recreate its four snowflakes as the first row, add twelve recognizable snow-crystal forms, rank them by beauty, use equal 4×4 cells, and include no stamps, text, borders, shadows, or decoration.
 
-<p align="center">
-  <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet.png" alt="Transparent 4 by 4 blue snowflake sprite sheet" width="760">
-</p>
+| Generated chroma-key source | Validated transparent output |
+| --- | --- |
+| <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet-chroma.png" alt="Blue snowflake sprite sheet on a green chroma-key background" width="560"> | <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet.png" alt="Transparent 4 by 4 blue snowflake sprite sheet" width="560"> |
+| 1254×1254 RGB source generated on a flat green background | 1256×1256 RGBA output with 314×314 sprite cells |
 
 ## Repository structure
 
@@ -66,6 +67,7 @@ skills/
     ├── scripts/
     │   └── remove_chroma_key.py
     └── examples/
+        ├── snowflake-sprite-sheet-chroma.png
         └── snowflake-sprite-sheet.png
 ```
 
