@@ -16,6 +16,8 @@ Skill source: [`skills/imagegen-transparent`](./skills/imagegen-transparent/)
 
 The skill uses **Codex's built-in ImageGen by default**. ImageGen is the default adapter, not a hard dependency of the transparency pipeline.
 
+[`agents/openai.yaml`](./skills/imagegen-transparent/agents/openai.yaml) provides Codex-facing display metadata and a default invocation prompt. Other compatible agents can ignore this file and use `SKILL.md` directly.
+
 Another local or remote image tool can be substituted when it can:
 
 - follow the shaped generation prompt;
@@ -59,6 +61,8 @@ Prompt summary:
 skills/
 └── imagegen-transparent/
     ├── SKILL.md
+    ├── agents/
+    │   └── openai.yaml
     ├── scripts/
     │   └── remove_chroma_key.py
     └── examples/

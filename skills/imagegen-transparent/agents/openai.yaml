@@ -1,0 +1,4 @@
+interface:
+  display_name: "ImageGen Transparent"
+  short_description: "Generate images with clean transparent backgrounds"
+  default_prompt: "Use $imagegen-transparent to generate an image on a removable key background and return a validated transparent PNG."
