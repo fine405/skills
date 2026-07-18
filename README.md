@@ -1,5 +1,7 @@
 # ImageGen Transparent
 
+[**English**](./README.md) | [简体中文](./README.zh-CN.md)
+
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
 Generate an image on a controlled chroma-key background, remove that background locally, and deliver a validated transparent PNG or WebP.
