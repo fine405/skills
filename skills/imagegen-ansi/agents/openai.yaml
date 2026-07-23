@@ -1,0 +1,4 @@
+interface:
+  display_name: "ImageGen ANSI"
+  short_description: "Create transparent ANSI art and terminal previews"
+  default_prompt: "Use $imagegen-ansi to turn this reference image into transparent ANSI-style art and a code-ready terminal preview."

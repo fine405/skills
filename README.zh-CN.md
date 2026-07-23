@@ -8,11 +8,23 @@
 
 ## 安装
 
+### ImageGen Transparent
+
 ```bash
 npx skills add fine405/skills --skill imagegen-transparent
 ```
 
 Skill 源码：[`skills/imagegen-transparent`](./skills/imagegen-transparent/)
+
+### ImageGen ANSI
+
+将参考图或生成的栅格图转换为透明 ANSI 风格图片、终端半块字符输出，以及可直接运行的 JavaScript 预览。
+
+```bash
+npx skills add fine405/skills --skill imagegen-ansi
+```
+
+Skill 源码：[`skills/imagegen-ansi`](./skills/imagegen-ansi/)
 
 ## 图像生成工具兼容性
 
@@ -62,6 +74,13 @@ Skill 源码：[`skills/imagegen-transparent`](./skills/imagegen-transparent/)
 
 ```text
 skills/
+├── imagegen-ansi/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── scripts/
+│       ├── raster_to_ansi.py
+│       └── remove_chroma_key.py
 └── imagegen-transparent/
     ├── SKILL.md
     ├── agents/
