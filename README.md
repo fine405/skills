@@ -1,47 +1,23 @@
-# ImageGen Transparent
+# Image Skills
 
 [**English**](./README.md) | [简体中文](./README.zh-CN.md)
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-Generate an image on a controlled chroma-key background, remove that background locally, and deliver a validated transparent PNG or WebP.
+Reusable image-generation workflows for transparent raster assets and code-ready ANSI terminal art.
 
-## Install
+## Available skills
 
-### ImageGen Transparent
+| Skill | Purpose | Install |
+| --- | --- | --- |
+| [`imagegen-transparent`](./skills/imagegen-transparent/) | Generate or extract clean transparent PNG/WebP assets with chroma-key removal, soft alpha matting, despill, and validation. | `npx skills add fine405/skills --skill imagegen-transparent` |
+| [`imagegen-ansi`](./skills/imagegen-ansi/) | Convert references or generated raster art into transparent ANSI-style assets, terminal half-block output, and executable JavaScript previews. | `npx skills add fine405/skills --skill imagegen-ansi` |
 
-```bash
-npx skills add fine405/skills --skill imagegen-transparent
-```
+## ImageGen Transparent
 
-Skill source: [`skills/imagegen-transparent`](./skills/imagegen-transparent/)
+Use Codex ImageGen or a compatible image generator to create a controlled chroma-key source, then remove the background locally and validate the result.
 
-### ImageGen ANSI
-
-Convert a reference image or generated raster into transparent ANSI-style art, terminal half-block output, and an executable JavaScript preview.
-
-```bash
-npx skills add fine405/skills --skill imagegen-ansi
-```
-
-Skill source: [`skills/imagegen-ansi`](./skills/imagegen-ansi/)
-
-## Image generator compatibility
-
-**Default implementation dependency:** Codex's built-in ImageGen supplies the generated source image. ImageGen is the first-party adapter used by this skill, while the chroma-key extraction pipeline remains independent of the generator.
-
-[`agents/openai.yaml`](./skills/imagegen-transparent/agents/openai.yaml) provides Codex-facing display metadata and a default invocation prompt. Other compatible agents can ignore this file and use `SKILL.md` directly.
-
-Another local or remote image tool can be substituted when it can:
-
-- follow the shaped generation prompt;
-- preserve reference-image roles;
-- produce a perfectly flat chroma-key background;
-- save the generated raster image to a local path.
-
-The extraction stage requires Python 3 and [Pillow](https://pillow.readthedocs.io/). The skill checks dependencies first. Under explicit Auto or Full Access permissions it installs only missing dependencies into the least-scoped environment; under restricted or ask-first permissions it explains the command and requests approval.
-
-## Workflow
+### Workflow
 
 1. Choose a key color absent from the subject, normally `#00ff00`.
 2. Generate the subject on an exact, flat key background with no shadows or reflections.
@@ -49,26 +25,71 @@ The extraction stage requires Python 3 and [Pillow](https://pillow.readthedocs.i
 4. Remove key-color spill and optionally contract the edge by 1 px.
 5. Validate RGBA mode, transparent corners, subject coverage, clipping, and edge quality.
 
-## Snowflake sprite-sheet example
+### Snowflake sprite-sheet example
 
-The example request supplied four blue engraved snowflake designs as a style-and-shape reference. The output needed to keep only the snowflakes, add other common snow-crystal forms, rank them by visual appeal, and deliver one transparent sprite sheet.
-
-Process:
-
-1. Generate exactly 16 cobalt-blue crystals in a strict 4×4 layout on `#00ff00`.
-2. Sample the generated border color (`#05ef04` in this run), then remove it using a soft matte and despill.
-3. Apply a 1 px edge contraction after detecting a faint green fringe.
-4. Pad the result to 1256×1256, giving 16 cells of 314×314 px.
-5. Confirm RGBA output and four fully transparent corners.
-
-Prompt summary:
-
-> Match the reference's cobalt-blue engraved ice-crystal style. Recreate its four snowflakes as the first row, add twelve recognizable snow-crystal forms, rank them by beauty, use equal 4×4 cells, and include no stamps, text, borders, shadows, or decoration.
+The example recreates four supplied snowflake forms, adds twelve common snow-crystal forms, and produces a ranked 4×4 transparent sprite sheet.
 
 | Generated chroma-key source | Validated transparent output |
 | --- | --- |
 | <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet-chroma.png" alt="Blue snowflake sprite sheet on a green chroma-key background" width="560"> | <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet.png" alt="Transparent 4 by 4 blue snowflake sprite sheet" width="560"> |
-| 1254×1254 RGB source generated on a flat green background | 1256×1256 RGBA output with 314×314 sprite cells |
+| 1254×1254 RGB source | 1256×1256 RGBA output with 314×314 cells |
+
+## ImageGen ANSI
+
+Use direct alpha conversion when a source already has a clean silhouette. Use ImageGen when the request needs a deliberate terminal-cell reinterpretation, then derive both the raster asset and executable terminal renderer from the same sampled bitmap.
+
+### Workflow
+
+1. Inspect the reference and preserve its silhouette, proportions, spacing, and exact text when present.
+2. Generate white terminal-cell geometry on a flat removable key background.
+3. Extract and validate a transparent RGBA raster.
+4. Sample its alpha channel and pack two vertical pixels into `█`, `▀`, and `▄`.
+5. Preview directly in the terminal or emit an executable `.mjs` module.
+
+### Mountain-and-sun example
+
+This example uses an original, generic mountain-and-rising-sun badge with no text or brand identity.
+
+1. Generate a flat reference badge.
+2. Reinterpret it as coarse white ANSI cell geometry on `#00ff00`.
+3. Sample the generated border (`#03ed0b`), remove it, and validate four transparent corners.
+4. Convert the alpha mask to a 48×50 bitmap and 25 terminal rows.
+5. Emit both plain ANSI text and an adaptive JavaScript renderer.
+
+Prompt summary:
+
+> Preserve the generic circular badge, two mountain peaks, and rising sun while translating all curves into deliberate terminal-cell steps. Render pure white on a perfectly flat green key background with no text, brand identity, shadows, gradients, or decoration.
+
+<table>
+  <thead>
+    <tr>
+      <th>Original reference</th>
+      <th>Generated chroma-key ANSI art</th>
+      <th>Validated transparent ANSI art</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="./skills/imagegen-ansi/examples/mountain-sun-reference.png" alt="Generic mountain and rising sun badge reference" width="300"></td>
+      <td><img src="./skills/imagegen-ansi/examples/mountain-sun-ansi-chroma.png" alt="White ANSI mountain and sun badge on a green chroma-key background" width="300"></td>
+      <td bgcolor="#0d1117"><img src="./skills/imagegen-ansi/examples/mountain-sun-ansi.png" alt="Transparent white ANSI mountain and sun badge" width="300"></td>
+    </tr>
+  </tbody>
+</table>
+
+Run the code-generated terminal preview:
+
+```bash
+node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
+```
+
+The corresponding plain-text output is available at [`mountain-sun-ansi.txt`](./skills/imagegen-ansi/examples/mountain-sun-ansi.txt).
+
+## Compatibility and requirements
+
+- Codex's built-in ImageGen is the default generator; another authorized generator may be used when it can produce a uniformly keyed local raster.
+- Extraction and ANSI conversion require Python 3 and [Pillow](https://pillow.readthedocs.io/).
+- [`agents/openai.yaml`](./skills/imagegen-ansi/agents/openai.yaml) and [`agents/openai.yaml`](./skills/imagegen-transparent/agents/openai.yaml) provide Codex-facing display metadata.
 
 ## Repository structure
 
@@ -76,17 +97,20 @@ Prompt summary:
 skills/
 ├── imagegen-ansi/
 │   ├── SKILL.md
-│   ├── agents/
-│   │   └── openai.yaml
-│   └── scripts/
-│       ├── raster_to_ansi.py
-│       └── remove_chroma_key.py
+│   ├── agents/openai.yaml
+│   ├── scripts/
+│   │   ├── raster_to_ansi.py
+│   │   └── remove_chroma_key.py
+│   └── examples/
+│       ├── mountain-sun-reference.png
+│       ├── mountain-sun-ansi-chroma.png
+│       ├── mountain-sun-ansi.png
+│       ├── mountain-sun-ansi.txt
+│       └── mountain-sun-ansi.mjs
 └── imagegen-transparent/
     ├── SKILL.md
-    ├── agents/
-    │   └── openai.yaml
-    ├── scripts/
-    │   └── remove_chroma_key.py
+    ├── agents/openai.yaml
+    ├── scripts/remove_chroma_key.py
     └── examples/
         ├── snowflake-sprite-sheet-chroma.png
         └── snowflake-sprite-sheet.png
