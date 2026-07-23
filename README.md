@@ -8,11 +8,23 @@ Generate an image on a controlled chroma-key background, remove that background 
 
 ## Install
 
+### ImageGen Transparent
+
 ```bash
 npx skills add fine405/skills --skill imagegen-transparent
 ```
 
 Skill source: [`skills/imagegen-transparent`](./skills/imagegen-transparent/)
+
+### ImageGen ANSI
+
+Convert a reference image or generated raster into transparent ANSI-style art, terminal half-block output, and an executable JavaScript preview.
+
+```bash
+npx skills add fine405/skills --skill imagegen-ansi
+```
+
+Skill source: [`skills/imagegen-ansi`](./skills/imagegen-ansi/)
 
 ## Image generator compatibility
 
@@ -62,6 +74,13 @@ Prompt summary:
 
 ```text
 skills/
+├── imagegen-ansi/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── scripts/
+│       ├── raster_to_ansi.py
+│       └── remove_chroma_key.py
 └── imagegen-transparent/
     ├── SKILL.md
     ├── agents/
