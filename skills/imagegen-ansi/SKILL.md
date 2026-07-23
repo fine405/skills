@@ -144,3 +144,19 @@ Report the transparent asset path, dimensions, alpha validation result, preview/
 
 - `scripts/remove_chroma_key.py`: sample a key background, build a soft alpha matte, despill edges, and validate transparency.
 - `scripts/raster_to_ansi.py`: validate an RGBA asset, sample its alpha channel, render half-block ANSI text, or emit an executable JavaScript module.
+
+## Bundled example
+
+Inspect `examples/` for a complete, copyright-safe mountain-and-sun conversion:
+
+- `mountain-sun-reference.png`: original generic reference image.
+- `mountain-sun-ansi-chroma.png`: ImageGen output on a removable key background.
+- `mountain-sun-ansi.png`: validated transparent ANSI-style raster.
+- `mountain-sun-ansi.txt`: deterministic half-block terminal output.
+- `mountain-sun-ansi.mjs`: executable and embeddable JavaScript renderer.
+
+Run the example with:
+
+```bash
+node "<skill-root>/examples/mountain-sun-ansi.mjs"
+```

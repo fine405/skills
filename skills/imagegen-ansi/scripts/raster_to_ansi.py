@@ -133,15 +133,16 @@ if (
 
 
 def write_result(content: str, output_path: Path | None, force: bool) -> None:
+    normalized = content.rstrip("\n") + "\n"
     if output_path is None:
-        sys.stdout.write(f"{content}\n")
+        sys.stdout.write(normalized)
         return
     if output_path.exists() and not force:
         raise FileExistsError(
             f"Refusing to overwrite {output_path}. Use --force or choose another path."
         )
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(f"{content}\n", encoding="utf-8")
+    output_path.write_text(normalized, encoding="utf-8")
 
 
 def parse_args() -> argparse.Namespace:
