@@ -4,7 +4,7 @@
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-Reusable image-generation workflows for transparent raster assets and code-ready ANSI terminal art.
+Reusable image-generation workflows for transparent raster assets, code-ready ANSI terminal art, and painterly full-color glyph mosaics.
 
 ## Available skills
 
@@ -12,6 +12,7 @@ Reusable image-generation workflows for transparent raster assets and code-ready
 | --- | --- | --- |
 | [`imagegen-transparent`](./skills/imagegen-transparent/) | Generate or extract clean transparent PNG/WebP assets with chroma-key removal, soft alpha matting, despill, and validation. | `npx skills add fine405/skills --skill imagegen-transparent` |
 | [`imagegen-ansi`](./skills/imagegen-ansi/) | Convert references or generated raster art into transparent ANSI-style assets, terminal half-block output, and executable JavaScript previews. | `npx skills add fine405/skills --skill imagegen-ansi` |
+| [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | Analyze visual references and generate full-color glyph-mosaic illustrations with a coherent character grid, directional glyph logic, and adjustable palette roles. | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
 
 ## ImageGen Transparent
 
@@ -85,11 +86,34 @@ node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
 
 The corresponding plain-text output is available at [`mountain-sun-ansi.txt`](./skills/imagegen-ansi/examples/mountain-sun-ansi.txt).
 
+## ImageGen Glyph Mosaic
+
+Use style references to separate stable visual DNA from adjustable subject and palette variables, then generate painterly raster scenes whose image-forming marks remain visible monospaced glyphs.
+
+### Workflow
+
+1. Label supplied images as style references or edit targets.
+2. Extract the stable grid, dual-scale readability, directional glyph logic, restrained palette, and print surface.
+3. Keep subject, composition, weather, and palette roles adjustable.
+4. Generate each distinct scene with its own prompt while reusing the same style core.
+5. Validate the result both as a small coherent scene and as a close-up character grid.
+
+### Polychrome glyph-mosaic examples
+
+All three examples use the same style core with scene-specific composition and palette-role blocks. They are original outputs generated for this skill.
+
+| Forest | Snow night | Golden mountain |
+| --- | --- | --- |
+| <img src="./skills/imagegen-glyph-mosaic/examples/forest.png" alt="Primeval forest rendered as a full-color glyph mosaic" width="360"> | <img src="./skills/imagegen-glyph-mosaic/examples/snow-night.png" alt="Moonlit snow valley and cabin rendered as a full-color glyph mosaic" width="360"> | <img src="./skills/imagegen-glyph-mosaic/examples/golden-mountain.png" alt="Golden sunrise mountain rendered as a full-color glyph mosaic" width="360"> |
+| Moss, dusty teal, ochre, and ivory | Indigo, icy blue-gray, cream, and restrained amber | Powder blue, glacier ivory, warm gold, and deep umber |
+
+The reusable template is in [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md), and the example scene prompts are in [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md).
+
 ## Compatibility and requirements
 
-- Codex's built-in ImageGen is the default generator; another authorized generator may be used when it can produce a uniformly keyed local raster.
-- Extraction and ANSI conversion require Python 3 and [Pillow](https://pillow.readthedocs.io/).
-- [`agents/openai.yaml`](./skills/imagegen-ansi/agents/openai.yaml) and [`agents/openai.yaml`](./skills/imagegen-transparent/agents/openai.yaml) provide Codex-facing display metadata.
+- Codex's built-in ImageGen is the default generator; another authorized generator may be used when it preserves the active skill's prompt constraints, reference roles, and local output workflow.
+- Chroma-key extraction and ANSI conversion require Python 3 and [Pillow](https://pillow.readthedocs.io/); glyph-mosaic generation has no additional local runtime dependency.
+- Each skill includes `agents/openai.yaml` with Codex-facing display metadata.
 
 ## Repository structure
 
@@ -107,6 +131,15 @@ skills/
 │       ├── mountain-sun-ansi.png
 │       ├── mountain-sun-ansi.txt
 │       └── mountain-sun-ansi.mjs
+├── imagegen-glyph-mosaic/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   ├── references/prompt-template.md
+│   └── examples/
+│       ├── prompts.md
+│       ├── forest.png
+│       ├── snow-night.png
+│       └── golden-mountain.png
 └── imagegen-transparent/
     ├── SKILL.md
     ├── agents/openai.yaml

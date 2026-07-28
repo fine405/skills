@@ -1,0 +1,4 @@
+interface:
+  display_name: "ImageGen Glyph Mosaic"
+  short_description: "Analyze and create polychrome glyph-mosaic art"
+  default_prompt: "Use $imagegen-glyph-mosaic to analyze these visual references, preserve their character-grid style, and generate a new full-color glyph-mosaic image."

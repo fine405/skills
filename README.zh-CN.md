@@ -4,7 +4,7 @@
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-用于生成透明栅格素材和可用代码复刻的 ANSI 终端字符画。
+用于生成透明栅格素材、可用代码复刻的 ANSI 终端字符画，以及具有绘画感的全彩字符镶嵌图。
 
 ## 可用 Skills
 
@@ -12,6 +12,7 @@
 | --- | --- | --- |
 | [`imagegen-transparent`](./skills/imagegen-transparent/) | 使用色键移除、柔和 Alpha 蒙版、去溢色和结果校验，生成或提取干净的透明 PNG/WebP。 | `npx skills add fine405/skills --skill imagegen-transparent` |
 | [`imagegen-ansi`](./skills/imagegen-ansi/) | 将参考图或生成的栅格图转换为透明 ANSI 风格素材、终端半块字符输出和可执行 JavaScript 预览。 | `npx skills add fine405/skills --skill imagegen-ansi` |
+| [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | 分析视觉参考，并使用统一字符网格、方向性 glyph 与可调色彩角色生成全彩字符镶嵌插画。 | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
 
 ## ImageGen Transparent
 
@@ -85,11 +86,34 @@ node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
 
 对应的纯文本输出位于 [`mountain-sun-ansi.txt`](./skills/imagegen-ansi/examples/mountain-sun-ansi.txt)。
 
+## ImageGen Glyph Mosaic
+
+从风格参考中分离稳定的视觉 DNA 与可调的主体、构图和色调参数，再生成由可见等宽字符构成、同时具有绘画感的栅格场景。
+
+### 工作流程
+
+1. 明确输入图片是风格参考还是编辑目标。
+2. 提取稳定的网格、双尺度可读性、方向性字符规则、受限调色板与印刷表面。
+3. 保持主体、构图、天气和色彩角色可调整。
+4. 复用同一个风格核，为每个不同场景单独生成提示词和图片。
+5. 同时用缩略图和原尺寸检查场景识别度与字符网格质量。
+
+### 全彩字符镶嵌示例
+
+三张示例共享同一个风格核，并分别使用独立的构图和色彩角色配置。它们均为本 Skill 生成的原创结果。
+
+| 森林 | 雪夜 | 日照金山 |
+| --- | --- | --- |
+| <img src="./skills/imagegen-glyph-mosaic/examples/forest.png" alt="使用全彩字符镶嵌方式表现的原始森林" width="360"> | <img src="./skills/imagegen-glyph-mosaic/examples/snow-night.png" alt="使用全彩字符镶嵌方式表现的月光雪谷与木屋" width="360"> | <img src="./skills/imagegen-glyph-mosaic/examples/golden-mountain.png" alt="使用全彩字符镶嵌方式表现的日照金山" width="360"> |
+| 苔藓绿、灰青、赭石与象牙白 | 靛蓝、冰灰蓝、乳白与克制琥珀色 | 雾蓝、冰川白、暖金与深棕 |
+
+可复用模板位于 [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md)，示例场景提示词位于 [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md)。
+
 ## 兼容性与依赖
 
-- 默认使用 Codex 内置 ImageGen；经过授权的其他生成工具只要能够生成均匀色键的本地栅格图，也可以接入。
-- 背景提取和 ANSI 转换需要 Python 3 与 [Pillow](https://pillow.readthedocs.io/)。
-- 两个 skill 的 [`agents/openai.yaml`](./skills/imagegen-ansi/agents/openai.yaml) 与 [`agents/openai.yaml`](./skills/imagegen-transparent/agents/openai.yaml) 提供面向 Codex 的展示元数据。
+- 默认使用 Codex 内置 ImageGen；经过授权的其他生成工具只要能够保留当前 Skill 的提示词约束、参考图角色和本地输出流程，也可以接入。
+- 色键背景提取与 ANSI 转换需要 Python 3 和 [Pillow](https://pillow.readthedocs.io/)；字符镶嵌图生成不需要额外的本地运行依赖。
+- 每个 Skill 都包含 `agents/openai.yaml`，用于提供面向 Codex 的展示元数据。
 
 ## 仓库结构
 
@@ -107,6 +131,15 @@ skills/
 │       ├── mountain-sun-ansi.png
 │       ├── mountain-sun-ansi.txt
 │       └── mountain-sun-ansi.mjs
+├── imagegen-glyph-mosaic/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   ├── references/prompt-template.md
+│   └── examples/
+│       ├── prompts.md
+│       ├── forest.png
+│       ├── snow-night.png
+│       └── golden-mountain.png
 └── imagegen-transparent/
     ├── SKILL.md
     ├── agents/openai.yaml
