@@ -1,19 +1,55 @@
-# Image Skills
+# App Icon & Image Skills
 
 [**English**](./README.md) | [简体中文](./README.zh-CN.md)
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-Reusable image-generation workflows for cross-platform app icons, transparent raster assets, code-ready ANSI terminal art, and painterly full-color glyph mosaics.
+Reusable creative-production skills centered on a modular app-icon system, with supporting workflows for transparent raster assets, code-ready ANSI terminal art, and painterly full-color glyph mosaics.
 
 ## Available skills
 
 | Skill | Purpose | Install |
 | --- | --- | --- |
-| [`app-icon-design`](./skills/app-icon-design/) | Design, generate, critique, and prepare one app-icon identity for Apple, Android, Web/PWA, Windows, and other targets through independent platform and style modules. | `npx skills add fine405/skills --skill app-icon-design` |
+| [`app-icon-design`](./skills/app-icon-design/) | Orchestrate one app-icon identity across optional themes, visual styles, Apple, Android, Web/PWA, Windows, and other targets. | `npx skills add fine405/skills --skill app-icon-design` |
+| [`app-icon-theme`](./skills/app-icon-theme/) | Create coherent theme-driven variants of an existing app icon while preserving its identity and keeping themes independent of style and platform. | `npx skills add fine405/skills --skill app-icon-theme` |
 | [`imagegen-transparent`](./skills/imagegen-transparent/) | Generate or extract clean transparent PNG/WebP assets with chroma-key removal, soft alpha matting, despill, and validation. | `npx skills add fine405/skills --skill imagegen-transparent` |
 | [`imagegen-ansi`](./skills/imagegen-ansi/) | Convert references or generated raster art into transparent ANSI-style assets, terminal half-block output, and executable JavaScript previews. | `npx skills add fine405/skills --skill imagegen-ansi` |
 | [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | Analyze visual references and generate full-color glyph-mosaic illustrations with a coherent character grid, directional glyph logic, and adjustable palette roles. | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
+
+## App Icon System
+
+The app-icon skills separate stable product identity from semantic themes, visual styles, and platform production rules:
+
+```text
+identity → optional theme-* → optional style-* → platform-* → final QA
+```
+
+### App Icon Design
+
+Use `app-icon-design` as the orchestrator. Build one recognizable product identity, then adapt it to each target without mixing platform specifications into theme or style rules.
+
+#### Workflow
+
+1. Reduce the app to an audience, core job, promise, category cue, and differentiator.
+2. Lock an identity invariant: metaphor, silhouette, proportions, brand-color role, and one signature detail.
+3. Load only the requested platform modules for Apple, Android, Web/PWA, or Windows.
+4. Resolve an optional semantic theme with `app-icon-theme`, then apply an installed style module or task-local style brief.
+5. Generate or edit the artwork, test target masks and small sizes, and report remaining packaging steps honestly.
+
+Bundled styles include soft neumorphism, discomorphism, and Jelly 3D. New visual directions remain independent `style-*.md` modules.
+
+### App Icon Theme
+
+Use `app-icon-theme` to reinterpret a user-owned icon through a music genre, season, mood, event, sport, profession, or content category without losing the source identity.
+
+#### Workflow
+
+1. Lock the source silhouette, internal cutouts, proportions, layout, and brand-color roles.
+2. Select one primary semantic cue and a transformation mode: material, structural analogy, or controlled accessory.
+3. Set subtle, balanced, or expressive intensity; balanced is the default.
+4. Apply an independently selected rendering style, then check identity and theme legibility at small sizes.
+
+The first bundled theme family is `theme-music-genre.md`. Future theme families use independent `theme-*.md` modules.
 
 ## ImageGen Transparent
 
@@ -110,20 +146,6 @@ All three examples use the same style core with scene-specific composition and p
 
 The reusable template is in [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md), and the example scene prompts are in [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md).
 
-## App Icon Design
-
-Build one recognizable product identity, then adapt it to each target without mixing platform specifications into visual-style rules.
-
-### Workflow
-
-1. Reduce the app to an audience, core job, promise, category cue, and differentiator.
-2. Lock an identity invariant: metaphor, silhouette, proportions, brand-color role, and one signature detail.
-3. Load only the requested platform modules for Apple, Android, Web/PWA, or Windows.
-4. Apply an installed style module or a task-local style brief; bundled styles include soft neumorphism and discomorphism.
-5. Generate or edit the artwork, test target masks and small sizes, and report remaining packaging steps honestly.
-
-New visual directions are added as independent `style-*.md` modules, so platform adapters and the core workflow remain unchanged.
-
 ## Compatibility and requirements
 
 - Codex's built-in ImageGen is the default generator; another authorized generator may be used when it preserves the active skill's prompt constraints, reference roles, and local output workflow.
@@ -145,7 +167,14 @@ skills/
 │       ├── platform-windows.md
 │       ├── module-style-template.md
 │       ├── style-discomorphism.md
+│       ├── style-jelly-3d.md
 │       └── style-soft-neumorphic.md
+├── app-icon-theme/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/
+│       ├── module-theme-template.md
+│       └── theme-music-genre.md
 ├── imagegen-ansi/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml

@@ -1,12 +1,12 @@
 ---
 name: app-icon-design
-description: Design, generate, edit, critique, and prepare app icons for Apple platforms, Android, Web/PWA, Windows, Linux, and other targets through independent platform and visual-style modules. Use for app-icon concepts, image-generation prompts or assets, launcher and store icons, adaptive or maskable variants, cross-platform identity systems, icon reviews, small-size and mask QA, production handoff, or adding a reusable icon style to the skill.
+description: Orchestrate the design, generation, editing, critique, and production preparation of app icons for Apple platforms, Android, Web/PWA, Windows, Linux, and other targets through coordinated identity, optional theme, visual-style, and platform modules. Use for new app-icon concepts, themed or styled variants, launcher and store icons, adaptive or maskable assets, cross-platform identity systems, icon reviews, small-size and mask QA, production handoff, or adding reusable platform and style capabilities.
 ---
 
 # App Icon Design
 
-Create one recognizable product identity, then adapt it to each target platform
-and visual style without mixing platform specifications into aesthetic rules.
+Create one recognizable product identity, then coordinate optional themes,
+visual styles, and target platforms without mixing their responsibilities.
 
 ## Resolve modules before designing
 
@@ -25,6 +25,19 @@ Record the target's canvas, mask, safe zone, alpha, layer, appearance, smallest
 rendered size, packaging, and store-listing requirements before producing final
 assets. Do not guess platform specifications.
 
+### Theme specialist
+
+When the request asks an existing icon to match a music genre, season, mood,
+event, sport, profession, culture, campaign, content category, or another
+semantic theme, use `$app-icon-theme` when it is installed. Pass it the source
+identity, identity invariant, target theme, desired intensity, and selected
+style. It owns semantic cue selection; this skill owns overall identity,
+platform adaptation, and final QA.
+
+If the specialist is unavailable, create a task-local theme brief. Do not fold
+reusable theme families into `style-*.md`: a theme decides what the icon evokes,
+while a style decides how it is rendered.
+
 ### Style modules
 
 Find installed style modules with:
@@ -39,6 +52,8 @@ Load the module matching the user's requested style. Installed modules include:
   [references/style-soft-neumorphic.md](references/style-soft-neumorphic.md)
 - Discomorphism / mirrored-tile mosaic:
   [references/style-discomorphism.md](references/style-discomorphism.md)
+- Jelly 3D / translucent gel:
+  [references/style-jelly-3d.md](references/style-jelly-3d.md)
 
 If no installed module matches, build a task-local style brief from the user's
 words or supplied reference. Do not silently substitute a nearby style. Create
@@ -51,8 +66,9 @@ Apply constraints in this order:
 1. user-owned brand and supplied content;
 2. product meaning and recognizable identity;
 3. hard platform requirements;
-4. selected visual style;
-5. export and packaging convenience.
+4. selected semantic theme;
+5. selected visual style;
+6. export and packaging convenience.
 
 ## Follow the workflow
 
@@ -69,24 +85,27 @@ Apply constraints in this order:
 5. **Define the identity invariant.** Lock the main metaphor, dominant
    silhouette, proportion relationship, brand color role, and one signature
    detail before adapting platforms or styles.
-6. **Generate or edit.** Use the available image-generation tool. Inspect an
+6. **Resolve theme and style.** Apply an optional theme before selecting its
+   rendering treatment. Keep the identity invariant explicit across both.
+7. **Generate or edit.** Use the available image-generation tool. Inspect an
    existing target image before editing it. If the user asks to proceed without
    selecting a direction, choose the recommended direction and continue.
-7. **Adapt per platform.** Preserve the identity invariant while changing
+8. **Adapt per platform.** Preserve the identity invariant and selected theme
+   while changing
    spacing, crop, layers, background behavior, monochrome treatment, or detail
    density to satisfy each platform module.
-8. **Evaluate and refine.** Inspect the full-size artwork, the smallest relevant
+9. **Evaluate and refine.** Inspect the full-size artwork, the smallest relevant
    display sizes, required masks, light/dark contexts, and themed or monochrome
    variants. Revise the weakest dimension with one or two targeted changes.
-9. **Prepare the handoff.** Export only the formats the target actually needs,
+10. **Prepare the handoff.** Export only the formats the target actually needs,
    preserve editable masters when available, and distinguish generated concept
    art from production-ready vector or layered assets.
 
 ## Resolve missing input
 
 Infer low-risk details from workspace context. Ask one concise question only
-when the target platform, product metaphor, or style choice would otherwise be
-arbitrary.
+when the target platform, product metaphor, theme, or style choice would
+otherwise be arbitrary.
 
 When the user supplies only an app function, default to:
 
@@ -108,6 +127,7 @@ of several icons, unless the user explicitly wants a comparison board.
 Every generation request must state:
 
 - app purpose and chosen metaphor;
+- selected theme module or task-local theme brief when theme variation is used;
 - selected style module or task-local style brief;
 - target artifact and platform treatment;
 - composition, palette, material/rendering, and lighting decisions;
@@ -156,7 +176,7 @@ Return:
 
 1. final asset links;
 2. selected concept and identity invariant;
-3. target/style matrix;
+3. target/theme/style matrix;
 4. exact reusable prompt or construction specification;
 5. QA results at relevant sizes, masks, and appearances;
 6. remaining packaging or store steps that were not performed.
@@ -166,5 +186,7 @@ Return:
 - Keep `SKILL.md` independent of any particular visual style.
 - Keep `platform-*.md` files free of aesthetic prescriptions.
 - Keep `style-*.md` files free of platform sizes and packaging instructions.
+- Keep reusable semantic themes in `$app-icon-theme`, not in style or platform
+  files.
 - Add a new platform or style as a directly linked reference file; do not fork
   the complete workflow.

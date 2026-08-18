@@ -1,4 +1,4 @@
 interface:
   display_name: "App 图标设计"
-  short_description: "为 Apple、Android、Web 与桌面平台设计并验收图标"
-  default_prompt: "使用 $app-icon-design 为我的应用设计跨平台图标，并按目标平台输出可复用的视觉方案和资产。"
+  short_description: "编排身份、主题、风格与平台，设计并验收跨平台 App 图标"
+  default_prompt: "使用 $app-icon-design 为我的应用编排主题、风格和目标平台，并输出可复用的图标方案与资产。"

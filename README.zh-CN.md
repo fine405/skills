@@ -1,19 +1,55 @@
-# 图像 Skills
+# App 图标与图像 Skills
 
 [English](./README.md) | [**简体中文**](./README.zh-CN.md)
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-用于设计跨平台 App 图标、生成透明栅格素材、制作可用代码复刻的 ANSI 终端字符画，以及具有绘画感的全彩字符镶嵌图。
+以模块化 App 图标系统为核心的创意生产 Skills，同时提供透明栅格素材、可用代码复刻的 ANSI 终端字符画，以及具有绘画感的全彩字符镶嵌图工作流。
 
 ## 可用 Skills
 
 | Skill | 用途 | 安装 |
 | --- | --- | --- |
-| [`app-icon-design`](./skills/app-icon-design/) | 通过相互独立的平台与风格模块，为 Apple、Android、Web/PWA、Windows 等目标设计、生成、评审并准备统一的 App 图标身份。 | `npx skills add fine405/skills --skill app-icon-design` |
+| [`app-icon-design`](./skills/app-icon-design/) | 编排统一的 App 图标身份、可选主题、视觉风格，以及 Apple、Android、Web/PWA、Windows 等目标平台。 | `npx skills add fine405/skills --skill app-icon-design` |
+| [`app-icon-theme`](./skills/app-icon-theme/) | 在保留现有图标身份的前提下创建连贯的主题化变体，并保持主题与风格、平台相互独立。 | `npx skills add fine405/skills --skill app-icon-theme` |
 | [`imagegen-transparent`](./skills/imagegen-transparent/) | 使用色键移除、柔和 Alpha 蒙版、去溢色和结果校验，生成或提取干净的透明 PNG/WebP。 | `npx skills add fine405/skills --skill imagegen-transparent` |
 | [`imagegen-ansi`](./skills/imagegen-ansi/) | 将参考图或生成的栅格图转换为透明 ANSI 风格素材、终端半块字符输出和可执行 JavaScript 预览。 | `npx skills add fine405/skills --skill imagegen-ansi` |
 | [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | 分析视觉参考，并使用统一字符网格、方向性 glyph 与可调色彩角色生成全彩字符镶嵌插画。 | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
+
+## App 图标系统
+
+App 图标 Skills 将稳定的产品身份与语义主题、视觉风格、平台生产规范分开处理：
+
+```text
+身份 → 可选 theme-* → 可选 style-* → platform-* → 最终验收
+```
+
+### App Icon Design
+
+使用 `app-icon-design` 作为总编排入口。先建立统一、可识别的产品身份，再针对不同目标平台分别适配，避免将平台规范混入主题或风格规则。
+
+#### 工作流程
+
+1. 将应用提炼为受众、核心任务、价值承诺、品类信号与差异点。
+2. 锁定身份不变量：隐喻、轮廓、比例、品牌色角色与一个标志性细节。
+3. 仅加载所需的 Apple、Android、Web/PWA 或 Windows 平台模块。
+4. 使用 `app-icon-theme` 解析可选语义主题，再应用已安装的风格模块或任务级风格简报。
+5. 生成或编辑图像，测试目标遮罩与小尺寸效果，并如实说明尚未完成的封装步骤。
+
+内置风格包括柔和轻拟物、迪斯科拟态与 Jelly 3D，后续视觉方向继续使用独立的 `style-*.md` 模块。
+
+### App Icon Theme
+
+使用 `app-icon-theme` 通过音乐类型、季节、情绪、活动、运动、职业或内容分类重新解释用户拥有的图标，同时保留源图标身份。
+
+#### 工作流程
+
+1. 锁定源图标的轮廓、内部留白、比例、构图与品牌色角色。
+2. 选择一个主要语义线索，以及材质替换、结构类比或受控配饰之一。
+3. 设置克制、平衡或强表达级别；默认使用平衡级别。
+4. 独立应用所选渲染风格，并在小尺寸下检查身份与主题辨识度。
+
+首个内置主题族为 `theme-music-genre.md`，后续主题族继续使用独立的 `theme-*.md` 模块。
 
 ## ImageGen Transparent
 
@@ -110,20 +146,6 @@ node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
 
 可复用模板位于 [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md)，示例场景提示词位于 [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md)。
 
-## App Icon Design
-
-先建立统一、可识别的产品身份，再针对不同目标平台分别适配，避免将平台规范混入视觉风格规则。
-
-### 工作流程
-
-1. 将应用提炼为受众、核心任务、价值承诺、品类信号与差异点。
-2. 锁定身份不变量：隐喻、轮廓、比例、品牌色角色与一个标志性细节。
-3. 仅加载所需的 Apple、Android、Web/PWA 或 Windows 平台模块。
-4. 应用已安装的风格模块或任务级风格简报；内置风格包括柔和轻拟物与迪斯科拟态。
-5. 生成或编辑图像，测试目标遮罩与小尺寸效果，并如实说明尚未完成的封装步骤。
-
-后续视觉方向以独立的 `style-*.md` 模块加入，不需要改动核心流程或平台适配器。
-
 ## 兼容性与依赖
 
 - 默认使用 Codex 内置 ImageGen；经过授权的其他生成工具只要能够保留当前 Skill 的提示词约束、参考图角色和本地输出流程，也可以接入。
@@ -145,7 +167,14 @@ skills/
 │       ├── platform-windows.md
 │       ├── module-style-template.md
 │       ├── style-discomorphism.md
+│       ├── style-jelly-3d.md
 │       └── style-soft-neumorphic.md
+├── app-icon-theme/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/
+│       ├── module-theme-template.md
+│       └── theme-music-genre.md
 ├── imagegen-ansi/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml

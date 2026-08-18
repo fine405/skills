@@ -1,0 +1,4 @@
+interface:
+  display_name: "App 图标主题设计"
+  short_description: "为现有 App 图标创建可识别、可组合且保持品牌身份的主题化变体"
+  default_prompt: "使用 $app-icon-theme 为我的现有 App 图标设计一组保持品牌身份的主题化变体。"
