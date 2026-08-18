@@ -119,7 +119,7 @@ node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
 1. 将应用提炼为受众、核心任务、价值承诺、品类信号与差异点。
 2. 锁定身份不变量：隐喻、轮廓、比例、品牌色角色与一个标志性细节。
 3. 仅加载所需的 Apple、Android、Web/PWA 或 Windows 平台模块。
-4. 应用已安装的风格模块或任务级风格简报；柔和轻拟物是首个内置风格。
+4. 应用已安装的风格模块或任务级风格简报；内置风格包括柔和轻拟物与迪斯科拟态。
 5. 生成或编辑图像，测试目标遮罩与小尺寸效果，并如实说明尚未完成的封装步骤。
 
 后续视觉方向以独立的 `style-*.md` 模块加入，不需要改动核心流程或平台适配器。
@@ -144,6 +144,7 @@ skills/
 │       ├── platform-web.md
 │       ├── platform-windows.md
 │       ├── module-style-template.md
+│       ├── style-discomorphism.md
 │       └── style-soft-neumorphic.md
 ├── imagegen-ansi/
 │   ├── SKILL.md

@@ -119,7 +119,7 @@ Build one recognizable product identity, then adapt it to each target without mi
 1. Reduce the app to an audience, core job, promise, category cue, and differentiator.
 2. Lock an identity invariant: metaphor, silhouette, proportions, brand-color role, and one signature detail.
 3. Load only the requested platform modules for Apple, Android, Web/PWA, or Windows.
-4. Apply an installed style module or a task-local style brief; soft neumorphism is the first bundled style.
+4. Apply an installed style module or a task-local style brief; bundled styles include soft neumorphism and discomorphism.
 5. Generate or edit the artwork, test target masks and small sizes, and report remaining packaging steps honestly.
 
 New visual directions are added as independent `style-*.md` modules, so platform adapters and the core workflow remain unchanged.
@@ -144,6 +144,7 @@ skills/
 │       ├── platform-web.md
 │       ├── platform-windows.md
 │       ├── module-style-template.md
+│       ├── style-discomorphism.md
 │       └── style-soft-neumorphic.md
 ├── imagegen-ansi/
 │   ├── SKILL.md

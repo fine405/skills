@@ -33,10 +33,12 @@ Find installed style modules with:
 rg --files <skill-dir>/references | rg '/style-[^/]+\.md$'
 ```
 
-Load the module matching the user's requested style. The initial module is:
+Load the module matching the user's requested style. Installed modules include:
 
 - Soft neumorphic / soft skeuomorphic:
   [references/style-soft-neumorphic.md](references/style-soft-neumorphic.md)
+- Discomorphism / mirrored-tile mosaic:
+  [references/style-discomorphism.md](references/style-discomorphism.md)
 
 If no installed module matches, build a task-local style brief from the user's
 words or supplied reference. Do not silently substitute a nearby style. Create
