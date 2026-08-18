@@ -4,12 +4,13 @@
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-Reusable image-generation workflows for transparent raster assets, code-ready ANSI terminal art, and painterly full-color glyph mosaics.
+Reusable image-generation workflows for cross-platform app icons, transparent raster assets, code-ready ANSI terminal art, and painterly full-color glyph mosaics.
 
 ## Available skills
 
 | Skill | Purpose | Install |
 | --- | --- | --- |
+| [`app-icon-design`](./skills/app-icon-design/) | Design, generate, critique, and prepare one app-icon identity for Apple, Android, Web/PWA, Windows, and other targets through independent platform and style modules. | `npx skills add fine405/skills --skill app-icon-design` |
 | [`imagegen-transparent`](./skills/imagegen-transparent/) | Generate or extract clean transparent PNG/WebP assets with chroma-key removal, soft alpha matting, despill, and validation. | `npx skills add fine405/skills --skill imagegen-transparent` |
 | [`imagegen-ansi`](./skills/imagegen-ansi/) | Convert references or generated raster art into transparent ANSI-style assets, terminal half-block output, and executable JavaScript previews. | `npx skills add fine405/skills --skill imagegen-ansi` |
 | [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | Analyze visual references and generate full-color glyph-mosaic illustrations with a coherent character grid, directional glyph logic, and adjustable palette roles. | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
@@ -109,16 +110,41 @@ All three examples use the same style core with scene-specific composition and p
 
 The reusable template is in [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md), and the example scene prompts are in [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md).
 
+## App Icon Design
+
+Build one recognizable product identity, then adapt it to each target without mixing platform specifications into visual-style rules.
+
+### Workflow
+
+1. Reduce the app to an audience, core job, promise, category cue, and differentiator.
+2. Lock an identity invariant: metaphor, silhouette, proportions, brand-color role, and one signature detail.
+3. Load only the requested platform modules for Apple, Android, Web/PWA, or Windows.
+4. Apply an installed style module or a task-local style brief; soft neumorphism is the first bundled style.
+5. Generate or edit the artwork, test target masks and small sizes, and report remaining packaging steps honestly.
+
+New visual directions are added as independent `style-*.md` modules, so platform adapters and the core workflow remain unchanged.
+
 ## Compatibility and requirements
 
 - Codex's built-in ImageGen is the default generator; another authorized generator may be used when it preserves the active skill's prompt constraints, reference roles, and local output workflow.
 - Chroma-key extraction and ANSI conversion require Python 3 and [Pillow](https://pillow.readthedocs.io/); glyph-mosaic generation has no additional local runtime dependency.
+- App-icon concept work has no additional local runtime dependency; production handoff requires checking the current official requirements for every target platform.
 - Each skill includes `agents/openai.yaml` with Codex-facing display metadata.
 
 ## Repository structure
 
 ```text
 skills/
+├── app-icon-design/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/
+│       ├── platform-android.md
+│       ├── platform-apple.md
+│       ├── platform-web.md
+│       ├── platform-windows.md
+│       ├── module-style-template.md
+│       └── style-soft-neumorphic.md
 ├── imagegen-ansi/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml

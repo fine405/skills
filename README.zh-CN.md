@@ -4,12 +4,13 @@
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-用于生成透明栅格素材、可用代码复刻的 ANSI 终端字符画，以及具有绘画感的全彩字符镶嵌图。
+用于设计跨平台 App 图标、生成透明栅格素材、制作可用代码复刻的 ANSI 终端字符画，以及具有绘画感的全彩字符镶嵌图。
 
 ## 可用 Skills
 
 | Skill | 用途 | 安装 |
 | --- | --- | --- |
+| [`app-icon-design`](./skills/app-icon-design/) | 通过相互独立的平台与风格模块，为 Apple、Android、Web/PWA、Windows 等目标设计、生成、评审并准备统一的 App 图标身份。 | `npx skills add fine405/skills --skill app-icon-design` |
 | [`imagegen-transparent`](./skills/imagegen-transparent/) | 使用色键移除、柔和 Alpha 蒙版、去溢色和结果校验，生成或提取干净的透明 PNG/WebP。 | `npx skills add fine405/skills --skill imagegen-transparent` |
 | [`imagegen-ansi`](./skills/imagegen-ansi/) | 将参考图或生成的栅格图转换为透明 ANSI 风格素材、终端半块字符输出和可执行 JavaScript 预览。 | `npx skills add fine405/skills --skill imagegen-ansi` |
 | [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | 分析视觉参考，并使用统一字符网格、方向性 glyph 与可调色彩角色生成全彩字符镶嵌插画。 | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
@@ -109,16 +110,41 @@ node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
 
 可复用模板位于 [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md)，示例场景提示词位于 [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md)。
 
+## App Icon Design
+
+先建立统一、可识别的产品身份，再针对不同目标平台分别适配，避免将平台规范混入视觉风格规则。
+
+### 工作流程
+
+1. 将应用提炼为受众、核心任务、价值承诺、品类信号与差异点。
+2. 锁定身份不变量：隐喻、轮廓、比例、品牌色角色与一个标志性细节。
+3. 仅加载所需的 Apple、Android、Web/PWA 或 Windows 平台模块。
+4. 应用已安装的风格模块或任务级风格简报；柔和轻拟物是首个内置风格。
+5. 生成或编辑图像，测试目标遮罩与小尺寸效果，并如实说明尚未完成的封装步骤。
+
+后续视觉方向以独立的 `style-*.md` 模块加入，不需要改动核心流程或平台适配器。
+
 ## 兼容性与依赖
 
 - 默认使用 Codex 内置 ImageGen；经过授权的其他生成工具只要能够保留当前 Skill 的提示词约束、参考图角色和本地输出流程，也可以接入。
 - 色键背景提取与 ANSI 转换需要 Python 3 和 [Pillow](https://pillow.readthedocs.io/)；字符镶嵌图生成不需要额外的本地运行依赖。
+- App 图标概念设计不需要额外的本地运行依赖；生产交付前必须核对各目标平台当前的官方规范。
 - 每个 Skill 都包含 `agents/openai.yaml`，用于提供面向 Codex 的展示元数据。
 
 ## 仓库结构
 
 ```text
 skills/
+├── app-icon-design/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/
+│       ├── platform-android.md
+│       ├── platform-apple.md
+│       ├── platform-web.md
+│       ├── platform-windows.md
+│       ├── module-style-template.md
+│       └── style-soft-neumorphic.md
 ├── imagegen-ansi/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml
