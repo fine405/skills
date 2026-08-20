@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open Source Contribution"
+  short_description: "Prepare compliant, non-duplicate upstream PRs"
+  default_prompt: "Use $open-source-contribution to prepare and submit this change to the upstream repository."
