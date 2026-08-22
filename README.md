@@ -8,7 +8,14 @@ Reusable development workflow skills for coding agents.
 
 | Skill | Purpose | Install |
 | --- | --- | --- |
+| [`eli5`](./skills/eli5/) | Turn a topic into a self-contained, picture-first HTML explainer for a complete beginner. | `npx skills add fine405/dev-skills --skill eli5` |
 | [`open-source-contribution`](./skills/open-source-contribution/) | Prepare compliant upstream contributions by checking repository rules, related issues and pull requests, conflicts, verification gates, attribution, and post-push CI. | `npx skills add fine405/dev-skills --skill open-source-contribution` |
+
+## ELI5
+
+Use `eli5` to explain a topic with three to five large visual scenes, very little text, and one faithful everyday analogy. It produces a responsive, standalone HTML file that works without a build step or network access.
+
+Inspired by Anthropic's community [`eli5`](https://github.com/anthropics/claude-plugins-community/tree/main/eli5) plugin and rewritten for Codex Skills.
 
 ## Open Source Contribution
 
@@ -26,6 +33,10 @@ The skill has no runtime dependency. Publishing requires an authenticated GitHub
 
 ```text
 skills/
+├── eli5/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
 └── open-source-contribution/
     ├── SKILL.md
     └── agents/

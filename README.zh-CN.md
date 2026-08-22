@@ -8,7 +8,14 @@
 
 | Skill | 用途 | 安装 |
 | --- | --- | --- |
+| [`eli5`](./skills/eli5/) | 将主题制作成面向零基础读者、图片优先的独立 HTML 图解。 | `npx skills add fine405/dev-skills --skill eli5` |
 | [`open-source-contribution`](./skills/open-source-contribution/) | 通过检查目标仓库规约、关联 issues/PRs、冲突、验证门槛、归因和推送后的 CI，准备合规的上游贡献。 | `npx skills add fine405/dev-skills --skill open-source-contribution` |
+
+## ELI5
+
+使用 `eli5` 将一个主题拆成三到五个大幅视觉场景，配合极少文字和一个准确的日常类比。它会生成响应式、无需构建步骤或网络连接即可打开的独立 HTML 文件。
+
+灵感来自 Anthropic 社区的 [`eli5`](https://github.com/anthropics/claude-plugins-community/tree/main/eli5) 插件，并针对 Codex Skills 重新编写。
 
 ## Open Source Contribution
 
@@ -26,6 +33,10 @@
 
 ```text
 skills/
+├── eli5/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
 └── open-source-contribution/
     ├── SKILL.md
     └── agents/
