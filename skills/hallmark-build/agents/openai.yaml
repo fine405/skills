@@ -1,0 +1,6 @@
+interface:
+  display_name: "Hallmark Build"
+  short_description: "Build distinctive production-ready web interfaces"
+  default_prompt: "Use $hallmark-build to design and implement this interface with a distinct structure and verified quality gates."
+policy:
+  allow_implicit_invocation: false
