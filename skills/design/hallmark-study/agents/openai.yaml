@@ -1,0 +1,6 @@
+interface:
+  display_name: "Hallmark Study"
+  short_description: "Extract reusable design DNA without cloning a source"
+  default_prompt: "Use $hallmark-study to analyze this screenshot or URL and extract reusable design DNA without copying it."
+policy:
+  allow_implicit_invocation: false

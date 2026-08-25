@@ -1,210 +1,127 @@
-# App Icon & Image Skills
+# Fine's Agent Skills
 
 [**English**](./README.md) | [简体中文](./README.zh-CN.md)
 
 [![skills.sh](https://skills.sh/b/fine405/skills)](https://skills.sh/fine405/skills)
 
-Reusable creative-production skills centered on a modular app-icon system, with supporting workflows for transparent raster assets, code-ready ANSI terminal art, and painterly full-color glyph mosaics.
+A curated, installable collection of agent skills for creative production,
+interface design, engineering, and visual explanation. This repository unifies
+the former `fine405/skills` and `fine405/dev-skills` collections while keeping
+each skill independently installable.
 
-## Available skills
+## Skills
 
-| Skill | Purpose | Install |
-| --- | --- | --- |
-| [`app-icon-design`](./skills/app-icon-design/) | Orchestrate one app-icon identity across optional themes, visual styles, Apple, Android, Web/PWA, Windows, and other targets. | `npx skills add fine405/skills --skill app-icon-design` |
-| [`app-icon-theme`](./skills/app-icon-theme/) | Create coherent theme-driven variants of an existing app icon while preserving its identity and keeping themes independent of style and platform. | `npx skills add fine405/skills --skill app-icon-theme` |
-| [`imagegen-transparent`](./skills/imagegen-transparent/) | Generate or extract clean transparent PNG/WebP assets with chroma-key removal, soft alpha matting, despill, and validation. | `npx skills add fine405/skills --skill imagegen-transparent` |
-| [`imagegen-ansi`](./skills/imagegen-ansi/) | Convert references or generated raster art into transparent ANSI-style assets, terminal half-block output, and executable JavaScript previews. | `npx skills add fine405/skills --skill imagegen-ansi` |
-| [`imagegen-glyph-mosaic`](./skills/imagegen-glyph-mosaic/) | Analyze visual references and generate full-color glyph-mosaic illustrations with a coherent character grid, directional glyph logic, and adjustable palette roles. | `npx skills add fine405/skills --skill imagegen-glyph-mosaic` |
+### AIGC
 
-## App Icon System
+| Skill | Purpose |
+| --- | --- |
+| [`app-icon-design`](./skills/aigc/app-icon-design/) | Orchestrate one app-icon identity across themes, visual styles, platforms, and production QA. |
+| [`app-icon-theme`](./skills/aigc/app-icon-theme/) | Create coherent theme-driven variants of an existing app icon without losing its identity. |
+| [`imagegen-ansi`](./skills/aigc/imagegen-ansi/) | Turn references or raster art into transparent ANSI-style assets and code-ready terminal previews. |
+| [`imagegen-glyph-mosaic`](./skills/aigc/imagegen-glyph-mosaic/) | Generate full-color glyph-mosaic illustrations with a coherent character grid and palette logic. |
+| [`imagegen-transparent`](./skills/aigc/imagegen-transparent/) | Generate or extract clean transparent assets with chroma-key removal, alpha cleanup, and validation. |
 
-The app-icon skills separate stable product identity from semantic themes, visual styles, and platform production rules:
+### Design
+
+| Skill | Purpose |
+| --- | --- |
+| [`hallmark-study`](./skills/design/hallmark-study/) | Extract reusable design DNA from a screenshot or public URL without cloning protected content. |
+| [`hallmark-build`](./skills/design/hallmark-build/) | Design and implement distinctive web UI while preserving the existing product system. |
+| [`hallmark-audit`](./skills/design/hallmark-audit/) | Audit UI code and rendered evidence for hierarchy, accessibility, responsiveness, trust, and implementation risk. |
+
+The Hallmark workflow is intentionally split into three explicit skills:
 
 ```text
-identity → optional theme-* → optional style-* → platform-* → final QA
+hallmark-study  -> extract abstract design DNA
+hallmark-build  -> implement against the product system
+hallmark-audit  -> inspect code and rendered evidence without editing
 ```
 
-### App Icon Design
+### Engineering
 
-Use `app-icon-design` as the orchestrator. Build one recognizable product identity, then adapt it to each target without mixing platform specifications into theme or style rules.
-
-#### Workflow
-
-1. Reduce the app to an audience, core job, promise, category cue, and differentiator.
-2. Lock an identity invariant: metaphor, silhouette, proportions, brand-color role, and one signature detail.
-3. Load only the requested platform modules for Apple, Android, Web/PWA, or Windows.
-4. Resolve an optional semantic theme with `app-icon-theme`, then apply an installed style module or task-local style brief.
-5. Generate or edit the artwork, test target masks and small sizes, and report remaining packaging steps honestly.
-
-Bundled styles include soft neumorphism, discomorphism, and Jelly 3D. New visual directions remain independent `style-*.md` modules.
-
-### App Icon Theme
-
-Use `app-icon-theme` to reinterpret a user-owned icon through a music genre, season, mood, event, sport, profession, or content category without losing the source identity.
-
-#### Workflow
-
-1. Lock the source silhouette, internal cutouts, proportions, layout, and brand-color roles.
-2. Select one primary semantic cue and a transformation mode: material, structural analogy, or controlled accessory.
-3. Set subtle, balanced, or expressive intensity; balanced is the default.
-4. Apply an independently selected rendering style, then check identity and theme legibility at small sizes.
-
-The first bundled theme family is `theme-music-genre.md`. Future theme families use independent `theme-*.md` modules.
-
-## ImageGen Transparent
-
-Use Codex ImageGen or a compatible image generator to create a controlled chroma-key source, then remove the background locally and validate the result.
-
-### Workflow
-
-1. Choose a key color absent from the subject, normally `#00ff00`.
-2. Generate the subject on an exact, flat key background with no shadows or reflections.
-3. Sample the actual border color and build a soft alpha matte.
-4. Remove key-color spill and optionally contract the edge by 1 px.
-5. Validate RGBA mode, transparent corners, subject coverage, clipping, and edge quality.
-
-### Snowflake sprite-sheet example
-
-The example recreates four supplied snowflake forms, adds twelve common snow-crystal forms, and produces a ranked 4×4 transparent sprite sheet.
-
-| Generated chroma-key source | Validated transparent output |
+| Skill | Purpose |
 | --- | --- |
-| <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet-chroma.png" alt="Blue snowflake sprite sheet on a green chroma-key background" width="560"> | <img src="./skills/imagegen-transparent/examples/snowflake-sprite-sheet.png" alt="Transparent 4 by 4 blue snowflake sprite sheet" width="560"> |
-| 1254×1254 RGB source | 1256×1256 RGBA output with 314×314 cells |
+| [`open-source-contribution`](./skills/engineering/open-source-contribution/) | Prepare compliant upstream contributions by checking repository rules, related work, verification gates, attribution, and CI. |
 
-## ImageGen ANSI
+### Productivity
 
-Use direct alpha conversion when a source already has a clean silhouette. Use ImageGen when the request needs a deliberate terminal-cell reinterpretation, then derive both the raster asset and executable terminal renderer from the same sampled bitmap.
+| Skill | Purpose |
+| --- | --- |
+| [`eli5`](./skills/productivity/eli5/) | Turn a topic into a self-contained, picture-first HTML explainer for a complete beginner. |
 
-### Workflow
+## Install
 
-1. Inspect the reference and preserve its silhouette, proportions, spacing, and exact text when present.
-2. Generate white terminal-cell geometry on a flat removable key background.
-3. Extract and validate a transparent RGBA raster.
-4. Sample its alpha channel and pack two vertical pixels into `█`, `▀`, and `▄`.
-5. Preview directly in the terminal or emit an executable `.mjs` module.
-
-### Mountain-and-sun example
-
-This example uses an original, generic mountain-and-rising-sun badge with no text or brand identity.
-
-1. Generate a flat reference badge.
-2. Reinterpret it as coarse white ANSI cell geometry on `#00ff00`.
-3. Sample the generated border (`#03ed0b`), remove it, and validate four transparent corners.
-4. Convert the alpha mask to a 48×50 bitmap and 25 terminal rows.
-5. Emit both plain ANSI text and an adaptive JavaScript renderer.
-
-Prompt summary:
-
-> Preserve the generic circular badge, two mountain peaks, and rising sun while translating all curves into deliberate terminal-cell steps. Render pure white on a perfectly flat green key background with no text, brand identity, shadows, gradients, or decoration.
-
-<table>
-  <thead>
-    <tr>
-      <th>Original reference</th>
-      <th>Generated chroma-key ANSI art</th>
-      <th>Validated transparent ANSI art</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="./skills/imagegen-ansi/examples/mountain-sun-reference.png" alt="Generic mountain and rising sun badge reference" width="300"></td>
-      <td><img src="./skills/imagegen-ansi/examples/mountain-sun-ansi-chroma.png" alt="White ANSI mountain and sun badge on a green chroma-key background" width="300"></td>
-      <td bgcolor="#0d1117"><img src="./skills/imagegen-ansi/examples/mountain-sun-ansi.png" alt="Transparent white ANSI mountain and sun badge" width="300"></td>
-    </tr>
-  </tbody>
-</table>
-
-Run the code-generated terminal preview:
+List the available skills:
 
 ```bash
-node ./skills/imagegen-ansi/examples/mountain-sun-ansi.mjs
+npx skills add fine405/skills --list
 ```
 
-The corresponding plain-text output is available at [`mountain-sun-ansi.txt`](./skills/imagegen-ansi/examples/mountain-sun-ansi.txt).
+Install one skill:
 
-## ImageGen Glyph Mosaic
+```bash
+npx skills add fine405/skills --skill app-icon-design
+```
 
-Use style references to separate stable visual DNA from adjustable subject and palette variables, then generate painterly raster scenes whose image-forming marks remain visible monospaced glyphs.
+Install every skill:
 
-### Workflow
+```bash
+npx skills add fine405/skills --skill '*'
+```
 
-1. Label supplied images as style references or edit targets.
-2. Extract the stable grid, dual-scale readability, directional glyph logic, restrained palette, and print surface.
-3. Keep subject, composition, weather, and palette roles adjustable.
-4. Generate each distinct scene with its own prompt while reusing the same style core.
-5. Validate the result both as a small coherent scene and as a close-up character grid.
+The skills CLI discovers skills recursively, so category folders do not change
+the installed skill name.
 
-### Polychrome glyph-mosaic examples
-
-All three examples use the same style core with scene-specific composition and palette-role blocks. They are original outputs generated for this skill.
-
-| Forest | Snow night | Golden mountain |
-| --- | --- | --- |
-| <img src="./skills/imagegen-glyph-mosaic/examples/forest.png" alt="Primeval forest rendered as a full-color glyph mosaic" width="360"> | <img src="./skills/imagegen-glyph-mosaic/examples/snow-night.png" alt="Moonlit snow valley and cabin rendered as a full-color glyph mosaic" width="360"> | <img src="./skills/imagegen-glyph-mosaic/examples/golden-mountain.png" alt="Golden sunrise mountain rendered as a full-color glyph mosaic" width="360"> |
-| Moss, dusty teal, ochre, and ivory | Indigo, icy blue-gray, cream, and restrained amber | Powder blue, glacier ivory, warm gold, and deep umber |
-
-The reusable template is in [`references/prompt-template.md`](./skills/imagegen-glyph-mosaic/references/prompt-template.md), and the example scene prompts are in [`examples/prompts.md`](./skills/imagegen-glyph-mosaic/examples/prompts.md).
-
-## Compatibility and requirements
-
-- Codex's built-in ImageGen is the default generator; another authorized generator may be used when it preserves the active skill's prompt constraints, reference roles, and local output workflow.
-- Chroma-key extraction and ANSI conversion require Python 3 and [Pillow](https://pillow.readthedocs.io/); glyph-mosaic generation has no additional local runtime dependency.
-- App-icon concept work has no additional local runtime dependency; production handoff requires checking the current official requirements for every target platform.
-- Each skill includes `agents/openai.yaml` with Codex-facing display metadata.
+Existing `fine405/dev-skills` users can switch the package source to
+`fine405/skills`; all five former development skill names remain unchanged.
 
 ## Repository structure
 
 ```text
 skills/
-├── app-icon-design/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       ├── platform-android.md
-│       ├── platform-apple.md
-│       ├── platform-web.md
-│       ├── platform-windows.md
-│       ├── module-style-template.md
-│       ├── style-discomorphism.md
-│       ├── style-jelly-3d.md
-│       └── style-soft-neumorphic.md
-├── app-icon-theme/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       ├── module-theme-template.md
-│       └── theme-music-genre.md
-├── imagegen-ansi/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── scripts/
-│   │   ├── raster_to_ansi.py
-│   │   └── remove_chroma_key.py
-│   └── examples/
-│       ├── mountain-sun-reference.png
-│       ├── mountain-sun-ansi-chroma.png
-│       ├── mountain-sun-ansi.png
-│       ├── mountain-sun-ansi.txt
-│       └── mountain-sun-ansi.mjs
-├── imagegen-glyph-mosaic/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   ├── references/prompt-template.md
-│   └── examples/
-│       ├── prompts.md
-│       ├── forest.png
-│       ├── snow-night.png
-│       └── golden-mountain.png
-└── imagegen-transparent/
-    ├── SKILL.md
-    ├── agents/openai.yaml
-    ├── scripts/remove_chroma_key.py
-    └── examples/
-        ├── snowflake-sprite-sheet-chroma.png
-        └── snowflake-sprite-sheet.png
+├── aigc/
+│   ├── app-icon-design/
+│   ├── app-icon-theme/
+│   ├── imagegen-ansi/
+│   ├── imagegen-glyph-mosaic/
+│   └── imagegen-transparent/
+├── design/
+│   ├── hallmark-audit/
+│   ├── hallmark-build/
+│   └── hallmark-study/
+├── engineering/
+│   └── open-source-contribution/
+└── productivity/
+    └── eli5/
 ```
 
-## License
+Every skill has a `SKILL.md` and Codex-facing `agents/openai.yaml`. Optional
+`references/`, `scripts/`, `examples/`, and `assets/` stay inside the skill so
+the directory remains portable when installed by itself. Some small utilities
+are deliberately duplicated between independently installable skills; repository
+validation prevents those copies from drifting.
 
-MIT
+## Validate
+
+Run the same checks as CI:
+
+```bash
+python3 scripts/validate_repo.py
+python3 -m unittest discover -s tests -v
+python3 -m compileall -q skills scripts tests
+```
+
+The validator checks category structure, frontmatter, unique names, agent
+metadata, bilingual index coverage, local Markdown links, and synchronized
+shared utility copies.
+
+## Attribution and license
+
+The Hallmark skills are adapted from
+[`Nutlope/hallmark`](https://github.com/Nutlope/hallmark) under the MIT License.
+`eli5` was inspired by Anthropic's community
+[`eli5`](https://github.com/anthropics/claude-plugins-community/tree/main/eli5)
+plugin and rewritten for Codex Skills. See
+[`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md) for details.
+
+Original content is licensed under the [MIT License](./LICENSE).

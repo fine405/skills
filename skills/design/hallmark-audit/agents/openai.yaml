@@ -1,0 +1,6 @@
+interface:
+  display_name: "Hallmark Audit"
+  short_description: "Audit UI code and rendered evidence for AI-default patterns"
+  default_prompt: "Use $hallmark-audit to inspect this interface and return a prioritized evidence-backed punch list without editing it."
+policy:
+  allow_implicit_invocation: false
