@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Direction"
+  short_description: "探索设计方向，通过独立截图评审与减法打磨形成鲜明一致的界面"
+  default_prompt: "使用 $design-direction 改进当前界面，探索适合产品的设计方向，通过截图评审与减法打磨完成实现。"

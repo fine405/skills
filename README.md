@@ -25,6 +25,7 @@ each skill independently installable.
 
 | Skill | Purpose |
 | --- | --- |
+| [`design-direction`](./skills/design/design-direction/) | Explore distinctive design directions, refine with independent screenshot critiques, and finish with restrained UI and copy. |
 | [`hallmark-study`](./skills/design/hallmark-study/) | Extract reusable design DNA from a screenshot or public URL without cloning protected content. |
 | [`hallmark-build`](./skills/design/hallmark-build/) | Design and implement distinctive web UI while preserving the existing product system. |
 | [`hallmark-audit`](./skills/design/hallmark-audit/) | Audit UI code and rendered evidence for hierarchy, accessibility, responsiveness, trust, and implementation risk. |
@@ -86,6 +87,7 @@ skills/
 │   ├── imagegen-glyph-mosaic/
 │   └── imagegen-transparent/
 ├── design/
+│   ├── design-direction/
 │   ├── hallmark-audit/
 │   ├── hallmark-build/
 │   └── hallmark-study/

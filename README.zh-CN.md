@@ -24,6 +24,7 @@ Skill 都可独立安装。
 
 | Skill | 用途 |
 | --- | --- |
+| [`design-direction`](./skills/design/design-direction/) | 探索鲜明的设计方向，通过独立截图评审迭代，以界面减法与文案打磨完成交付。 |
 | [`hallmark-study`](./skills/design/hallmark-study/) | 从截图或公开 URL 提取可复用的设计 DNA，同时避免复制受保护内容。 |
 | [`hallmark-build`](./skills/design/hallmark-build/) | 在保留现有产品系统的前提下设计并实现有辨识度的 Web UI。 |
 | [`hallmark-audit`](./skills/design/hallmark-audit/) | 从代码与渲染证据审计层级、可访问性、响应式、可信度和实现风险。 |
@@ -84,6 +85,7 @@ skills/
 │   ├── imagegen-glyph-mosaic/
 │   └── imagegen-transparent/
 ├── design/
+│   ├── design-direction/
 │   ├── hallmark-audit/
 │   ├── hallmark-build/
 │   └── hallmark-study/
