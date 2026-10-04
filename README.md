@@ -49,6 +49,7 @@ hallmark-audit  -> inspect code and rendered evidence without editing
 | Skill | Purpose |
 | --- | --- |
 | [`eli5`](./skills/productivity/eli5/) | Turn a topic into a self-contained, picture-first HTML explainer for a complete beginner. |
+| [`write-explain`](./skills/productivity/write-explain/) | Draft and edit clear writing automatically; explain on explicit invocation, with optional HTML or captioned video proposed after delivery for the user to choose. |
 
 ## Install
 
@@ -94,7 +95,8 @@ skills/
 ├── engineering/
 │   └── open-source-contribution/
 └── productivity/
-    └── eli5/
+    ├── eli5/
+    └── write-explain/
 ```
 
 Every skill has a `SKILL.md` and Codex-facing `agents/openai.yaml`. Optional

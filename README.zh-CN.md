@@ -48,6 +48,7 @@ hallmark-audit  → 结合代码与渲染证据审计，不修改文件
 | Skill | 用途 |
 | --- | --- |
 | [`eli5`](./skills/productivity/eli5/) | 将主题制作成面向零基础读者、图片优先的独立 HTML 图解。 |
+| [`write-explain`](./skills/productivity/write-explain/) | 按意图自动写作，手动触发解释；遵循中文写作与排版约束，交付后按收益建议 HTML 或字幕视频，由用户决定是否制作。 |
 
 ## 安装
 
@@ -92,7 +93,8 @@ skills/
 ├── engineering/
 │   └── open-source-contribution/
 └── productivity/
-    └── eli5/
+    ├── eli5/
+    └── write-explain/
 ```
 
 每个 Skill 都包含 `SKILL.md` 与面向 Codex 的 `agents/openai.yaml`。可选的

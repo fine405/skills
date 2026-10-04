@@ -23,3 +23,14 @@ Newsletter. It independently expresses the Discover–Define–Deliver workflow
 with bounded screenshot critique and optional generated media. The article
 and its illustrations are not distributed with this repository; no license
 to those source materials is implied by the repository’s MIT License.
+
+## Write Explain
+
+The `write-explain` skill contains original workflow instructions informed by
+[ASD-STE100](https://www.asd-ste100.org/faq.html),
+[Ruanyf’s Chinese technical-document writing guide](https://github.com/ruanyf/document-style-guide),
+[Chinese Copywriting Guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines),
+and [Microsoft’s localization style guides](https://learn.microsoft.com/zh-cn/globalization/reference/microsoft-style-guides).
+Its references identify these sources and distinguish user style preferences
+from source guidance. The source manuals and controlled dictionaries are not
+redistributed, and the skill does not claim ASD-STE100 compliance.
