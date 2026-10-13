@@ -7,7 +7,7 @@
   "skill": "device-interaction",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "584d29b72201066f2acca85de958eb477d4f25e87e5c795d4ba870625f6173bc"
     }
   }

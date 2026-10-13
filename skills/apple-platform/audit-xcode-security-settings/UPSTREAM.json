@@ -7,7 +7,7 @@
   "skill": "audit-xcode-security-settings",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "96bb69548c26e3d3772e4daabe70cefb8d670ff3111dbbbe547df6bbdcbd1786"
     },
     "references/additional-settings.md": {

@@ -7,7 +7,7 @@
   "skill": "app-resizability",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "1b16afdc3702c1ab843ff8ca5c629d7fc2aaf01079852336cb150b4fe16cfdf2"
     },
     "references/idiom-task.md": {
@@ -28,7 +28,9 @@
     },
     "references/uiscreen-task.md": {
       "path": "apple/references/uiscreen-task.md",
-      "sha256": "2792146f5a7439d26b8a51c60ef7a28becc1851139545baf2226caf6984a4d4f"
+      "sha256": "2792146f5a7439d26b8a51c60ef7a28becc1851139545baf2226caf6984a4d4f",
+      "packaged_sha256": "4497b5293abae95578f4c95c5243ebabac9a096f947603ab398da46463bd2c86",
+      "adaptation": "Retarget the relative entry-point link from ../SKILL.md to ../guide.md."
     }
   }
 }

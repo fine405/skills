@@ -39,8 +39,9 @@ redistributed, and the skill does not claim ASD-STE100 compliance.
 
 The ten skills in `skills/apple-platform/` package Apple-authored guidance exported
 from Xcode 27.1 (build 27A9275) on 2026-10-13. Each skill keeps all exported files
-under `apple/`, unchanged in content and directory structure. The outer Codex
-entry point is the installable skill. Its `UPSTREAM.json` records paths and SHA-256
+under `apple/`, with the upstream entry point renamed to `guide.md` to avoid
+duplicate discovery. A relative entry-point link is adjusted where recorded.
+The outer Codex entry point is the only installable skill. Its `UPSTREAM.json` records paths and SHA-256
 hashes, and its `UPSTREAM_NOTICE.md` travels with independent installations.
 
 The export contains no standalone license file. This repository's MIT License

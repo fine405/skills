@@ -7,7 +7,7 @@
   "skill": "app-intents-specialist",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "2fc4d82086fa888bca4a71e2d1b23374c1778f58817b163f4176906d8102627e"
     },
     "references/app-enum.md": {

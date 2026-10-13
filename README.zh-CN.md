@@ -22,7 +22,7 @@ Skill 都可独立安装。
 
 ### Apple 平台
 
-从 Apple Xcode 27.1 导出，保留原文与文件校验值，并添加 Codex 入口。
+从 Apple Xcode 27.1 导出，保留官方指导与来源校验值，并添加单一 Codex 入口；必要的链接调整有独立记录。
 设备交互等工作流需要配套 Xcode 工具；这些文件不是工具安装器。
 详见 [来源、使用与更新说明](./docs/apple-xcode-skills.md)。
 

@@ -7,7 +7,7 @@
   "skill": "app-intents-whats-new-27",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "15660e2a7db3f480c3dce9375ff5e6cf850752e4c4fac38d28b58c3b6455be50"
     },
     "references/convenience-properties.md": {

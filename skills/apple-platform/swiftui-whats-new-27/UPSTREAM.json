@@ -7,7 +7,7 @@
   "skill": "swiftui-whats-new-27",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "92f352f8a1570bc3252e0144525a284c4795425265bec720f0a22e5791f58ed7"
     },
     "references/async-image.md": {

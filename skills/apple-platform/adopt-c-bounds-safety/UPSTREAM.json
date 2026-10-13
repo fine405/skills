@@ -7,7 +7,7 @@
   "skill": "adopt-c-bounds-safety",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "911056202865ce15f4e2d8d47e43afc83e61fe09e395e7151d647873770fe68a"
     },
     "references/adoption-strategies.md": {

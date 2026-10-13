@@ -7,7 +7,7 @@
   "skill": "building-document-based-swiftui-applications",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "f6a7567b32ff182268f91d76ae3e484c5b8b07192967d60930614df89c386f8d"
     },
     "references/creating-document-apps.md": {

@@ -23,7 +23,7 @@ each skill independently installable.
 
 ### Apple platforms
 
-Exported from Apple Xcode 27.1 with unchanged upstream files, provenance hashes,
+Exported from Apple Xcode 27.1 with preserved upstream guidance, provenance hashes,
 and Codex entry points. Device workflows require the corresponding Xcode tools;
 these files do not install tools. See [source, usage, and updates](./docs/apple-xcode-skills.md).
 

@@ -10,10 +10,11 @@ unchanged Apple source snapshot, not an independently rewritten API guide.
 
 ## Workflow
 
-1. Read [Apple's guidance](apple/SKILL.md) before giving recommendations or editing.
+1. Read [Apple's guidance](apple/guide.md) before giving recommendations or editing.
 2. Resolve upstream `references/` and `scripts/` paths relative to `apple/` inside
    this skill directory. Read only the references relevant to the task; keep
-   bundled scripts beside their reference files.
+   bundled scripts beside their reference files. Upstream mentions of `SKILL.md`
+   refer to `apple/guide.md`, the renamed original entry point.
 3. Inspect the project's actual Xcode/Swift settings and deployment targets.
    Preserve its architecture and dependencies. Gate advice on both SDK and runtime
    availability; do not upgrade the project merely to use an example.
@@ -41,7 +42,7 @@ still requires the corresponding Apple tools and environment.
 Before attempting Apple's session workflow, verify that the host exposes the
 `DeviceInteractionStartWorkspaceSession` (or `DeviceInteractionStartSession`),
 `DeviceInteractionInstallAndRun` where needed, `DeviceEventSynthesize`, and
-`DeviceInteractionEndSession` capabilities described in `apple/SKILL.md`.
+`DeviceInteractionEndSession` capabilities described in `apple/guide.md`.
 If unavailable, report that this workflow cannot run in the current session.
 Do not equate a screenshot, a build, or a different simulator tool with completed
 Apple device verification. Another available workflow may be proposed separately.

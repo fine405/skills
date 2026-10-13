@@ -7,7 +7,7 @@
   "skill": "swiftui-specialist",
   "files": {
     "SKILL.md": {
-      "path": "apple/SKILL.md",
+      "path": "apple/guide.md",
       "sha256": "0ef5b3a2a95f43714b4e5e7a07a987341c966911cd9da01bcfbca8041277715f"
     },
     "references/animations.md": {

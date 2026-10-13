@@ -11,9 +11,10 @@ Each independently installable directory contains:
 
 - `SKILL.md`: concise Codex entry point and compatibility workflow.
 - `agents/openai.yaml`: Codex display metadata and explicit invocation prompt.
-- `apple/SKILL.md`: unchanged exported Apple entry point.
+- `apple/guide.md`: exported Apple entry point, renamed to avoid duplicate discovery.
 - `apple/references/` and `apple/scripts/`: exported resources, where provided.
-- `UPSTREAM.json`: Xcode version/build, export date, and SHA-256 for every file.
+- `UPSTREAM.json`: Xcode version/build, export date, original SHA-256 for every file,
+  and `packaged_sha256` plus an explanation for an adapted file.
 - `UPSTREAM_NOTICE.md`: attribution and the Apple-content license boundary.
 
 Apple files are not relicensed under this repository's MIT License. No separate
@@ -21,10 +22,10 @@ upstream license file was included in this export.
 
 ## Use in Codex
 
-Install one skill with the skills CLI, selecting Codex as the target agent:
+Install one skill globally with the skills CLI, targeting Codex:
 
 ```sh
-npx skills add fine405/skills --skill swiftui-specialist
+npx skills add fine405/skills --global --agent codex --skill swiftui-specialist
 ```
 
 Then ask: "Use $swiftui-specialist to review this feature's view structure and
@@ -62,8 +63,11 @@ DEVELOPER_DIR=/path/to/Xcode.app/Contents/Developer \
 ```
 
 Review the exported names and changes before replacing any packaged skill. Copy
-all resources into that skill's `apple/` directory with original filenames, and
-refresh its `UPSTREAM.json` mappings/hashes and notice. Preserve
+all resources into that skill's `apple/` directory, rename the exported `SKILL.md`
+to `guide.md`, and retarget any Markdown links to it. Never leave a nested
+`SKILL.md`: Codex discovers it as a second skill even when the skills CLI does not.
+Refresh `UPSTREAM.json` mappings/hashes and notice; keep `sha256` as the original
+export digest and record `packaged_sha256` for any link-adapted file. Preserve
 the Codex adapter unless upstream changes require it to change. Update both README
 inventories for additions/removals, run the repository gates in `AGENTS.md`, and
 verify every packaged upstream file against the export. Updates are manual, not
@@ -76,6 +80,7 @@ They do not establish that every Apple API example compiles against a user's SDK
 or that live device, profiling, or migration workflows have been exercised.
 
 Upstream formatting, including existing trailing whitespace, is preserved for
-byte-for-byte provenance. Whitespace checks for the Codex integration exclude
+provenance. Only the recorded relative link adjustment changes upstream content.
+Whitespace checks for the Codex integration exclude
 `skills/apple-platform/*/apple/**`; repository metadata and link checks still
 cover the packaged guides.

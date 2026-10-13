@@ -83,6 +83,12 @@ def validate_skill(skill_dir: Path) -> list[str]:
     text = skill_file.read_text(encoding="utf-8")
     meta = frontmatter(text)
 
+    for nested in skill_dir.rglob("SKILL.md"):
+        if nested != skill_file:
+            errors.append(
+                f"{nested.relative_to(ROOT)}: nested SKILL.md causes duplicate discovery"
+            )
+
     if not SLUG_RE.fullmatch(skill_dir.name):
         errors.append(f"{skill_dir.relative_to(ROOT)}: skill directory must be kebab-case")
     if meta.get("name") != skill_dir.name:
