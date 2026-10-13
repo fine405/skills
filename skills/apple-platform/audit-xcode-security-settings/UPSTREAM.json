@@ -1,0 +1,82 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "audit-xcode-security-settings",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "96bb69548c26e3d3772e4daabe70cefb8d670ff3111dbbbe547df6bbdcbd1786"
+    },
+    "references/additional-settings.md": {
+      "path": "apple/references/additional-settings.md",
+      "sha256": "99085f004e639992632030cf8533eb81660c68dee1729d74f99b036d2ab5c460"
+    },
+    "references/adoption-strategy.md": {
+      "path": "apple/references/adoption-strategy.md",
+      "sha256": "e71c07094f9d974819b09e0b085408394c9b5f4eeb63bc9e2b907aa8016b6b8c"
+    },
+    "references/checked-pointer-arithmetic.md": {
+      "path": "apple/references/checked-pointer-arithmetic.md",
+      "sha256": "f7b901528247930d6f3d0d62d65142131178510f9e8aa195c8021445f62a6f7c"
+    },
+    "references/cpp-hardening.md": {
+      "path": "apple/references/cpp-hardening.md",
+      "sha256": "84e5c83e326dabf0a1c3911cb6ce8030b0bb52731aa23eed2fda80f9018f421a"
+    },
+    "references/decision-document.md": {
+      "path": "apple/references/decision-document.md",
+      "sha256": "ab9a633a7adc9a6145d898abaab167c9b6186d166c096ff944b71d683fd30e77"
+    },
+    "references/enhanced-security.md": {
+      "path": "apple/references/enhanced-security.md",
+      "sha256": "6480493bf8e552f8c8528150956f65abf1016fdcdf1526a15a48ae1c63d03162"
+    },
+    "references/hardware-memory-tagging.md": {
+      "path": "apple/references/hardware-memory-tagging.md",
+      "sha256": "0170b8629dcc91c945cc44344982bf684e9ce08d99d1db956f11db9ca2d70ea0"
+    },
+    "references/pointer-authentication.md": {
+      "path": "apple/references/pointer-authentication.md",
+      "sha256": "18891dba9b1483059cf009ad6f29c3716bbff8b7b6ec4ccdc7f163823aa83268"
+    },
+    "references/reading-build-settings.md": {
+      "path": "apple/references/reading-build-settings.md",
+      "sha256": "0a2b29a340d83f04eadb5c089c6109795ebb812339fa79a01b832b73dac8a35f"
+    },
+    "references/readonly-platform-memory.md": {
+      "path": "apple/references/readonly-platform-memory.md",
+      "sha256": "e49e3096b911c5b47a3fc1b4078299846de9d448998ce92bf823597b8fd34f6c"
+    },
+    "references/runtime-restrictions.md": {
+      "path": "apple/references/runtime-restrictions.md",
+      "sha256": "4200abe81899b70b0935bdb782f200c7e298a1cd2c0991fb85d1d34fb04e090c"
+    },
+    "references/security-compiler-warnings.md": {
+      "path": "apple/references/security-compiler-warnings.md",
+      "sha256": "4d2b8ec18fb61a592c34a53977c34f9cfb89d3238dc80c2e36a17dad803aa917"
+    },
+    "references/security-settings-reference.md": {
+      "path": "apple/references/security-settings-reference.md",
+      "sha256": "9f87ccff201bb693de987dea4660efa84eac6256c1799c689f824c6c65b54cdb"
+    },
+    "references/stack-zero-init.md": {
+      "path": "apple/references/stack-zero-init.md",
+      "sha256": "d9ca331f09b1ee422a33331770ea4fdf4b714c8da62cdf15f5496723d33aada8"
+    },
+    "references/typed-allocators.md": {
+      "path": "apple/references/typed-allocators.md",
+      "sha256": "f56ec737a352c1b5f59e2fa38f357f71d321834589bd0ea4e5eff442d5bc4439"
+    },
+    "references/universal-binaries-for-libraries.md": {
+      "path": "apple/references/universal-binaries-for-libraries.md",
+      "sha256": "b3040747580de7dcb577ea9c12e8608154443a439c692f702ef8d8a1c5110bfd"
+    },
+    "scripts/filter_build_settings.py": {
+      "path": "apple/scripts/filter_build_settings.py",
+      "sha256": "f728f9eb82ea5579a2e9748cd179e3bf97f267b812464e982982e8041ea80dfe"
+    }
+  }
+}

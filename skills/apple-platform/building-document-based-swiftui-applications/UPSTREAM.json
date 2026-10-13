@@ -1,0 +1,26 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "building-document-based-swiftui-applications",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "f6a7567b32ff182268f91d76ae3e484c5b8b07192967d60930614df89c386f8d"
+    },
+    "references/creating-document-apps.md": {
+      "path": "apple/references/creating-document-apps.md",
+      "sha256": "734c6834fb013a1fd4e7bb9044b41e37850db9cd9b7589e67c6b244fe01192c0"
+    },
+    "references/migrating-document-apps.md": {
+      "path": "apple/references/migrating-document-apps.md",
+      "sha256": "e47c29b93b342d4d9215a710b1cc7a21e54a2ddbc9c526f0e2012d08305d9fd3"
+    },
+    "references/uniform-type-identifiers.md": {
+      "path": "apple/references/uniform-type-identifiers.md",
+      "sha256": "aa33b4ffb98c37f70a7cb54f1f771587ab1cba66b9d249179d8a59b1faaf4948"
+    }
+  }
+}

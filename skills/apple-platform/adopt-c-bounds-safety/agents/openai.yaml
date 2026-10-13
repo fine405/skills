@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple C Bounds Safety"
+  short_description: "Adopt and debug C bounds safety with Apple guidance"
+  default_prompt: "Use $adopt-c-bounds-safety to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple App Resizability"
+  short_description: "Adapt app layouts and scene lifecycles to resizing"
+  default_prompt: "Use $app-resizability to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

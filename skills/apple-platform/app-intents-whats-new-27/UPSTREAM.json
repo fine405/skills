@@ -1,0 +1,70 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "app-intents-whats-new-27",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "15660e2a7db3f480c3dce9375ff5e6cf850752e4c4fac38d28b58c3b6455be50"
+    },
+    "references/convenience-properties.md": {
+      "path": "apple/references/convenience-properties.md",
+      "sha256": "d15cc0e6b8e1b953477cda223a3e053d784df294afe65baa712c2640d44d46e6"
+    },
+    "references/cross-device-and-ownership.md": {
+      "path": "apple/references/cross-device-and-ownership.md",
+      "sha256": "212f00db60aad1853ac921a071b730f5e3ec169261542b99d59e183b834a8b8a"
+    },
+    "references/entity-collection.md": {
+      "path": "apple/references/entity-collection.md",
+      "sha256": "2d37bf5b0668a9334a7b630882f2e444035f1295e678feafa341d0118ea7fdae"
+    },
+    "references/execution-modes.md": {
+      "path": "apple/references/execution-modes.md",
+      "sha256": "8a21a6d9454cc77dc32e45655422ca8edd2fe7b0940cdba2035a146bcf5703b8"
+    },
+    "references/interactive-snippets.md": {
+      "path": "apple/references/interactive-snippets.md",
+      "sha256": "7419209a21003e3c10a9b210de2022f7963ba46995acfc225bd21029d6713a5a"
+    },
+    "references/onscreen-entities.md": {
+      "path": "apple/references/onscreen-entities.md",
+      "sha256": "5e07d8201f5008a4b83e1bfe8746be1d639c32e24e8af0cf71212723d93acfbc"
+    },
+    "references/relevance-and-context.md": {
+      "path": "apple/references/relevance-and-context.md",
+      "sha256": "add4d0b718d5f15e3e92782971bb7558e49f601ae107f07076a4257cedf05fb3"
+    },
+    "references/requestchoice.md": {
+      "path": "apple/references/requestchoice.md",
+      "sha256": "714d2b26bb46fb791bffd80f1ced79bd19eaca5d053f4ba56b161915e60ecac0"
+    },
+    "references/schema-adoption.md": {
+      "path": "apple/references/schema-adoption.md",
+      "sha256": "c9c930c2a0dcc7e9c25e20fc4dde0d60f122680c157f79fce30eb0c14d028443"
+    },
+    "references/spotlight-indexing.md": {
+      "path": "apple/references/spotlight-indexing.md",
+      "sha256": "ad2b6e04aa70a3f4b3dbac58b946ef4380db5b9ed5ebf2394f7c059e9f85e424"
+    },
+    "references/system-shortcuts.md": {
+      "path": "apple/references/system-shortcuts.md",
+      "sha256": "e5929c0e968c1942a70d26ccb284876c8959ebd6e56e443863ca6b6564d80270"
+    },
+    "references/testing.md": {
+      "path": "apple/references/testing.md",
+      "sha256": "a3ebb7610e6792f7a825657fddff2720cf2464447af0a0a8ec7d272f62c3f0e0"
+    },
+    "references/union-values.md": {
+      "path": "apple/references/union-values.md",
+      "sha256": "3105989d42271419866ee2b4c105c391d36039ea6080b2f51bf6824ea14fdd50"
+    },
+    "references/visual-intelligence.md": {
+      "path": "apple/references/visual-intelligence.md",
+      "sha256": "21c8bd00a22556d50c0ebdc35ad96227a8b5d261f0204bb8e29edbc13d777840"
+    }
+  }
+}

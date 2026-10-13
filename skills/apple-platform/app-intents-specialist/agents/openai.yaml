@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple App Intents Specialist"
+  short_description: "Design and review App Intents using Apple guidance"
+  default_prompt: "Use $app-intents-specialist to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

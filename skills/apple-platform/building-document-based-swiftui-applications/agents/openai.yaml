@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple SwiftUI Document Apps"
+  short_description: "Build and migrate SwiftUI document-based apps"
+  default_prompt: "Use $building-document-based-swiftui-applications to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

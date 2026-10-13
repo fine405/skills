@@ -1,0 +1,14 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "device-interaction",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "584d29b72201066f2acca85de958eb477d4f25e87e5c795d4ba870625f6173bc"
+    }
+  }
+}

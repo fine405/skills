@@ -1,0 +1,50 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "swiftui-specialist",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "0ef5b3a2a95f43714b4e5e7a07a987341c966911cd9da01bcfbca8041277715f"
+    },
+    "references/animations.md": {
+      "path": "apple/references/animations.md",
+      "sha256": "300aa684ffcd871404962f0f9f2c15ac6d33e82ec6e55b02af43e1117be6bb34"
+    },
+    "references/dataflow.md": {
+      "path": "apple/references/dataflow.md",
+      "sha256": "ad531e41fd99cb8ec77ef891be413b2f0267a14345cc305849896238b8e875ac"
+    },
+    "references/environment.md": {
+      "path": "apple/references/environment.md",
+      "sha256": "4333ffacae6e8b9cda8eba5360cf774ab8d34bb1d987bd198c819a76afc8a05e"
+    },
+    "references/foreach.md": {
+      "path": "apple/references/foreach.md",
+      "sha256": "8ee7aeada9f5f8c2bd0587e7a9e25144664ba3f659020189a18a81fc53718c84"
+    },
+    "references/localization.md": {
+      "path": "apple/references/localization.md",
+      "sha256": "204d7d6a101690c9f6f2de4fb2202680f7a78c6828263f60ff50ccbaada03a6a"
+    },
+    "references/modifiers.md": {
+      "path": "apple/references/modifiers.md",
+      "sha256": "59b85e86c508c7bd088716deae0123a3c301f6e17cc42ee729d499edec309016"
+    },
+    "references/soft-deprecated-apis.md": {
+      "path": "apple/references/soft-deprecated-apis.md",
+      "sha256": "4a23846c9e421e8da5e8864d9180679c833d82a56a807b5bfda81060fdf9f55b"
+    },
+    "references/soft-deprecation.md": {
+      "path": "apple/references/soft-deprecation.md",
+      "sha256": "be3950512a6f33f767f033806b29b811afbbc996c7afaeb339813207ba1acb0e"
+    },
+    "references/structure.md": {
+      "path": "apple/references/structure.md",
+      "sha256": "0a0f9f96e1b5265fef5d8116d9de96e91eab0870d272676d07ee356b5fac8980"
+    }
+  }
+}

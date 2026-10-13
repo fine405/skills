@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple SwiftUI Updates"
+  short_description: "Adopt new SwiftUI APIs with SDK and runtime checks"
+  default_prompt: "Use $swiftui-whats-new-27 to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

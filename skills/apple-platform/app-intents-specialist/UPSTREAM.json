@@ -1,0 +1,70 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "app-intents-specialist",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "2fc4d82086fa888bca4a71e2d1b23374c1778f58817b163f4176906d8102627e"
+    },
+    "references/app-enum.md": {
+      "path": "apple/references/app-enum.md",
+      "sha256": "94d4d22004ba02cd84f7fac790c0168e09547bee37899ade777d6896d6da9655"
+    },
+    "references/app-shortcut-phrases.md": {
+      "path": "apple/references/app-shortcut-phrases.md",
+      "sha256": "5a3622e78c2759bbc936a6ab59239651d2d60f7828a9af681be57bcf2569c473"
+    },
+    "references/configuration-intents.md": {
+      "path": "apple/references/configuration-intents.md",
+      "sha256": "8cd46e70642db140253b4acf5004add3afed07caff3d6e5541b305005bc69193"
+    },
+    "references/dependencies.md": {
+      "path": "apple/references/dependencies.md",
+      "sha256": "e812022283240d180d879a1430b0a668a1000f4bb0d33081051a52da1824aee5"
+    },
+    "references/donation.md": {
+      "path": "apple/references/donation.md",
+      "sha256": "3645ae137a436e290790119aa76e17796c688f4745ac28a6335f60672e7b6e0a"
+    },
+    "references/entities-and-queries.md": {
+      "path": "apple/references/entities-and-queries.md",
+      "sha256": "ec647b7cb91ef6d37b778ff62bb095df17f03679daada8ed2ee539e6e29ce7d8"
+    },
+    "references/entity-property-queries.md": {
+      "path": "apple/references/entity-property-queries.md",
+      "sha256": "73b065986c5929c7f54abbdb658efb4e35506661acc3a54004603fee484d39cf"
+    },
+    "references/execution-model.md": {
+      "path": "apple/references/execution-model.md",
+      "sha256": "0ccc1c07608f0eb234510760c3f66c18b3d1be86a77a303ee19fdf55b8295cdf"
+    },
+    "references/factoring.md": {
+      "path": "apple/references/factoring.md",
+      "sha256": "1f96bbd36a8fdfb993e42e096efe64e6df553af9b9bb36b36b3daefb24f71732"
+    },
+    "references/localization.md": {
+      "path": "apple/references/localization.md",
+      "sha256": "3f8b5c22a2343d5cb095a618e4f561f2732e72884f8ee9063f98f2dc50db5961"
+    },
+    "references/parameter-summaries.md": {
+      "path": "apple/references/parameter-summaries.md",
+      "sha256": "9cbf50f73e75899b4c95540b1a536e843a6efffd87f9e7ae112c8dd70659e79c"
+    },
+    "references/parameters.md": {
+      "path": "apple/references/parameters.md",
+      "sha256": "ac06e240cb4fa0404de1bedcaf774ed139912666a3a9214a310022bc71f933e9"
+    },
+    "references/results-and-errors.md": {
+      "path": "apple/references/results-and-errors.md",
+      "sha256": "87ad36960d0544fe62f50d6607a235daf4b6be1fe8751734178013974b47e008"
+    },
+    "references/url-representation.md": {
+      "path": "apple/references/url-representation.md",
+      "sha256": "b7aaaff604d5ce724921d39253a9cb047ac7149b9058e577328003fbc813a17a"
+    }
+  }
+}

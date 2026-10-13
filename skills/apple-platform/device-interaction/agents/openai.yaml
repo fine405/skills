@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple Device Interaction"
+  short_description: "Verify app UI with Xcode device interaction tools"
+  default_prompt: "Use $device-interaction to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

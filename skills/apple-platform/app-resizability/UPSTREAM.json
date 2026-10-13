@@ -1,0 +1,34 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "app-resizability",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "1b16afdc3702c1ab843ff8ca5c629d7fc2aaf01079852336cb150b4fe16cfdf2"
+    },
+    "references/idiom-task.md": {
+      "path": "apple/references/idiom-task.md",
+      "sha256": "d3d5b5c053c5cdce8114666e3168a5783b2181fb7de12f12afb6ea0825428e7c"
+    },
+    "references/orientation-task.md": {
+      "path": "apple/references/orientation-task.md",
+      "sha256": "e8262a75739be16d6687bfcb5daadd91189097d3824a1375df4b539e44f0d7c2"
+    },
+    "references/safe-area-task.md": {
+      "path": "apple/references/safe-area-task.md",
+      "sha256": "39a162cbad6c4fe4648f665156c8919bdc7a5279800225515325e10d252490db"
+    },
+    "references/scene-lifecycle-task.md": {
+      "path": "apple/references/scene-lifecycle-task.md",
+      "sha256": "917b8f0bee7ab080ed71f409db6d8c4fd19478459d12d4f9d5127b13c53e612d"
+    },
+    "references/uiscreen-task.md": {
+      "path": "apple/references/uiscreen-task.md",
+      "sha256": "2792146f5a7439d26b8a51c60ef7a28becc1851139545baf2226caf6984a4d4f"
+    }
+  }
+}

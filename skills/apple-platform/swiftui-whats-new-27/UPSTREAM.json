@@ -1,0 +1,42 @@
+{
+  "publisher": "Apple",
+  "xcode_version": "27.1",
+  "xcode_build": "27A9275",
+  "export_date": "2026-10-13",
+  "export_command": "xcrun agent skills export --output-dir <export-directory>",
+  "skill": "swiftui-whats-new-27",
+  "files": {
+    "SKILL.md": {
+      "path": "apple/SKILL.md",
+      "sha256": "92f352f8a1570bc3252e0144525a284c4795425265bec720f0a22e5791f58ed7"
+    },
+    "references/async-image.md": {
+      "path": "apple/references/async-image.md",
+      "sha256": "32d0d65f7b87987db11d9bc43696f04b19814661005d1499adb663562bfa865b"
+    },
+    "references/content-builder.md": {
+      "path": "apple/references/content-builder.md",
+      "sha256": "cfac29c44babab62575451e83e34011d5dda90d980271ffe4797558a2017cd53"
+    },
+    "references/item-binding.md": {
+      "path": "apple/references/item-binding.md",
+      "sha256": "f7c403dec3cb50267ecb6ba4c38e2f2a059ae4b8c216d8327d65c718dc9a0a46"
+    },
+    "references/reorderable.md": {
+      "path": "apple/references/reorderable.md",
+      "sha256": "7db958d8b0f2386ce46599b7d4aa6a664feee6fbea9182e592e86e59fce1e65d"
+    },
+    "references/state-macro.md": {
+      "path": "apple/references/state-macro.md",
+      "sha256": "2ce869280087101d22c35934a9cae4bf337e66c42c7ccefc992ce4744787c815"
+    },
+    "references/swipe-actions.md": {
+      "path": "apple/references/swipe-actions.md",
+      "sha256": "62c7efa8bad6501e8ee894e850d6c4975bd9393c8a36192d3171e4668f5eb33e"
+    },
+    "references/toolbar.md": {
+      "path": "apple/references/toolbar.md",
+      "sha256": "52a35566fe42bfa8ffc5d4fb453d2174de49c08688752bb450b8fcc4827a51eb"
+    }
+  }
+}

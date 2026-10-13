@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple App Intents Updates"
+  short_description: "Adopt new App Intents APIs with version checks"
+  default_prompt: "Use $app-intents-whats-new-27 to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

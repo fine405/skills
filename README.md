@@ -21,6 +21,25 @@ each skill independently installable.
 | [`imagegen-glyph-mosaic`](./skills/aigc/imagegen-glyph-mosaic/) | Generate full-color glyph-mosaic illustrations with a coherent character grid and palette logic. |
 | [`imagegen-transparent`](./skills/aigc/imagegen-transparent/) | Generate or extract clean transparent assets with chroma-key removal, alpha cleanup, and validation. |
 
+### Apple platforms
+
+Exported from Apple Xcode 27.1 with unchanged upstream files, provenance hashes,
+and Codex entry points. Device workflows require the corresponding Xcode tools;
+these files do not install tools. See [source, usage, and updates](./docs/apple-xcode-skills.md).
+
+| Skill | Purpose |
+| --- | --- |
+| [`adopt-c-bounds-safety`](./skills/apple-platform/adopt-c-bounds-safety/) | Use Apple guidance to adopt or debug the C -fbounds-safety extension, pointer annotations, build modes, and runtime bounds violations. Not for ordinary Swift-only code. |
+| [`app-intents-specialist`](./skills/apple-platform/app-intents-specialist/) | Use Apple guidance when implementing or reviewing App Intents, entities, queries, parameters, dependencies, Shortcuts, and system integration correctness. |
+| [`app-intents-whats-new-27`](./skills/apple-platform/app-intents-whats-new-27/) | Use Apple guidance when adopting or migrating newer App Intents APIs, execution modes, interactive snippets, Visual Intelligence, Spotlight indexing, and cross-device entities. Check SDK and runtime availability. |
+| [`app-resizability`](./skills/apple-platform/app-resizability/) | Use Apple guidance to make apps adapt to changing window sizes, multiwindow scenes, split-screen, Stage Manager, or foldable layouts, and migrate legacy UIKit screen and lifecycle assumptions. |
+| [`audit-xcode-security-settings`](./skills/apple-platform/audit-xcode-security-settings/) | Use Apple guidance to audit Xcode compiler warnings, static analysis, and security hardening build settings. Not for TLS, signing, or privacy API reviews. |
+| [`building-document-based-swiftui-applications`](./skills/apple-platform/building-document-based-swiftui-applications/) | Use Apple guidance when building or migrating SwiftUI document-based apps with Document, DocumentGroup, readers, writers, autosave, undo, and UTTypes. New APIs require supported SDKs and deployment targets. |
+| [`device-interaction`](./skills/apple-platform/device-interaction/) | Verify app behavior on a device or simulator using Apple DeviceInteraction tools, screenshots, hierarchy, and touch events. Requires the corresponding Xcode tools. Not for build-only or unit-test-only tasks. |
+| [`modernize-tests`](./skills/apple-platform/modernize-tests/) | Use Apple guidance to migrate eligible XCTest tests to Swift Testing or improve existing Swift Testing patterns. Keep UI automation and XCTest performance measurement tests in XCTest. |
+| [`swiftui-specialist`](./skills/apple-platform/swiftui-specialist/) | Use Apple guidance when writing or reviewing SwiftUI view structure, state ownership, Observation, Environment, list identity, modifiers, animation, localization, and deprecated APIs. |
+| [`swiftui-whats-new-27`](./skills/apple-platform/swiftui-whats-new-27/) | Use Apple guidance for SwiftUI 27 API adoption and migration, including State macro diagnostics, ContentBuilder, reordering, AsyncImage, swipe actions, toolbars, and item-bound presentations. |
+
 ### Design
 
 | Skill | Purpose |
@@ -87,6 +106,17 @@ skills/
 │   ├── imagegen-ansi/
 │   ├── imagegen-glyph-mosaic/
 │   └── imagegen-transparent/
+├── apple-platform/
+│   ├── adopt-c-bounds-safety/
+│   ├── app-intents-specialist/
+│   ├── app-intents-whats-new-27/
+│   ├── app-resizability/
+│   ├── audit-xcode-security-settings/
+│   ├── building-document-based-swiftui-applications/
+│   ├── device-interaction/
+│   ├── modernize-tests/
+│   ├── swiftui-specialist/
+│   └── swiftui-whats-new-27/
 ├── design/
 │   ├── design-direction/
 │   ├── hallmark-audit/
@@ -129,3 +159,7 @@ plugin and rewritten for Codex Skills. See
 [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md) for details.
 
 Original content is licensed under the [MIT License](./LICENSE).
+
+Apple export files retain Apple's rights and applicable terms and are not covered
+by this repository's MIT License. Each skill includes its own upstream notice
+and file provenance.

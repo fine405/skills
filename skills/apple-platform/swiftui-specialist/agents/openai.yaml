@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple SwiftUI Specialist"
+  short_description: "Apply Apple SwiftUI structure and data-flow guidance"
+  default_prompt: "Use $swiftui-specialist to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."

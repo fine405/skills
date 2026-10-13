@@ -20,6 +20,25 @@ Skill 都可独立安装。
 | [`imagegen-glyph-mosaic`](./skills/aigc/imagegen-glyph-mosaic/) | 使用统一字符网格与色彩逻辑生成全彩字符镶嵌插画。 |
 | [`imagegen-transparent`](./skills/aigc/imagegen-transparent/) | 通过色键移除、Alpha 清理与校验生成或提取透明素材。 |
 
+### Apple 平台
+
+从 Apple Xcode 27.1 导出，保留原文与文件校验值，并添加 Codex 入口。
+设备交互等工作流需要配套 Xcode 工具；这些文件不是工具安装器。
+详见 [来源、使用与更新说明](./docs/apple-xcode-skills.md)。
+
+| Skill | 用途 |
+| --- | --- |
+| [`adopt-c-bounds-safety`](./skills/apple-platform/adopt-c-bounds-safety/) | 采用、检查与调试 C 边界安全扩展。 |
+| [`app-intents-specialist`](./skills/apple-platform/app-intents-specialist/) | 设计与审查 App Intents、实体、查询、依赖及快捷指令。 |
+| [`app-intents-whats-new-27`](./skills/apple-platform/app-intents-whats-new-27/) | 按 SDK 与系统版本接入 App Intents 新 API。 |
+| [`app-resizability`](./skills/apple-platform/app-resizability/) | 适配窗口尺寸、多窗口与 Scene 生命周期，迁移旧 UIKit 假设。 |
+| [`audit-xcode-security-settings`](./skills/apple-platform/audit-xcode-security-settings/) | 审查 Xcode 编译警告、静态分析与安全加固设置。 |
+| [`building-document-based-swiftui-applications`](./skills/apple-platform/building-document-based-swiftui-applications/) | 构建或迁移 SwiftUI 文档型 App，包括读写、自动保存与撤销。 |
+| [`device-interaction`](./skills/apple-platform/device-interaction/) | 使用 Xcode 设备交互工具验证界面与操作；需要配套工具。 |
+| [`modernize-tests`](./skills/apple-platform/modernize-tests/) | 迁移或改进 Swift Testing，保留 XCTest UI 与性能测试。 |
+| [`swiftui-specialist`](./skills/apple-platform/swiftui-specialist/) | 按 Apple 指南开发与审查视图结构、状态、Observation、列表及本地化。 |
+| [`swiftui-whats-new-27`](./skills/apple-platform/swiftui-whats-new-27/) | 按 SDK 与系统版本接入 SwiftUI 27 API 与迁移说明。 |
+
 ### 设计
 
 | Skill | 用途 |
@@ -85,6 +104,17 @@ skills/
 │   ├── imagegen-ansi/
 │   ├── imagegen-glyph-mosaic/
 │   └── imagegen-transparent/
+├── apple-platform/
+│   ├── adopt-c-bounds-safety/
+│   ├── app-intents-specialist/
+│   ├── app-intents-whats-new-27/
+│   ├── app-resizability/
+│   ├── audit-xcode-security-settings/
+│   ├── building-document-based-swiftui-applications/
+│   ├── device-interaction/
+│   ├── modernize-tests/
+│   ├── swiftui-specialist/
+│   └── swiftui-whats-new-27/
 ├── design/
 │   ├── design-direction/
 │   ├── hallmark-audit/
@@ -125,3 +155,6 @@ Anthropic 社区的
 [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md)。
 
 原创内容使用 [MIT 许可证](./LICENSE)。
+
+Apple 导出文件保留 Apple 的权利与适用条款，不适用本仓库 MIT 许可；
+每个技能包含独立的来源说明与文件校验记录。

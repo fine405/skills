@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apple Modernize Tests"
+  short_description: "Modernize Swift tests while preserving XCTest UI tests"
+  default_prompt: "Use $modernize-tests to help with this Apple-platform task, following the bundled Apple guidance and the project's existing constraints."
