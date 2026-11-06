@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>产品线框 · 交互模板</title>
+  <!-- Copy this file. Keep only the interactions required by the product brief. -->
+  <style>
+    :root{color-scheme:light;--ink:#252a31;--muted:#69727c;--line:#d6dbe0;--soft:#f3f5f6;--bone:#e3e7ea;--paper:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:#f8f9fa;color:var(--ink);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,select{font:inherit;color:inherit}
+    button{cursor:pointer}
+    button:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+    button:disabled{cursor:default;opacity:.5}
+    .workbench{max-width:850px;margin:auto;padding:28px 20px 40px}
+    .heading{margin:0;font-size:22px;font-weight:600;letter-spacing:-.03em}
+    .caption{margin:5px 0 16px;color:var(--muted);font-size:13px}
+    .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:22px}
+    .toolbar button,.toolbar select{min-height:38px;padding:6px 12px;background:var(--paper);border:1px solid var(--line);border-radius:7px}
+    .toolbar label{display:flex;align-items:center;gap:8px;font-size:13px}
+    .phone{width:min(100%,374px);margin:0 auto;border:1.5px solid #a6afb8;border-radius:34px;background:var(--paper);padding:8px;box-shadow:0 12px 32px #26334008}
+    .screen{position:relative;height:670px;max-height:calc(100dvh - 60px);min-height:480px;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--paper)}
+    .device-bar{height:30px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eff1f3}
+    .camera{width:58px;height:5px;background:#c9cfd5;border-radius:5px}
+    #stage{position:absolute;inset:30px 0 0;overflow:hidden}
+    .page{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column}
+    .nav{height:56px;flex-shrink:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding:0 12px}
+    .nav h2{margin:0;text-align:center;font-size:17px;font-weight:600}
+    .icon-button{width:36px;height:36px;padding:8px;border:0;background:transparent;display:grid;place-items:center;border-radius:50%}
+    .icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .page-body{padding:24px 20px 32px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;flex:1;min-height:0}
+    .bone{display:block;width:var(--w,100%);height:9px;background:var(--bone);border-radius:3px}
+    .bone.small{height:6px;background:#edf0f2}
+    .bone.large{height:16px}
+    .lines{display:grid;gap:10px;flex:1}
+    .summary{display:flex;align-items:center;gap:24px;margin:2px 0 28px}
+    .ring{display:grid;place-items:center;width:82px;height:82px;border:1.5px solid #8d98a3;border-radius:50%;flex-shrink:0}
+    h3{font-size:14px;font-weight:600;margin:24px 0 12px}
+    .section{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .row{display:flex;align-items:center;gap:16px;min-height:70px;padding:16px 0;border-bottom:1px solid #eceff1}
+    .row:last-child{border-bottom:0}
+    .square{width:34px;height:34px;border:1px solid var(--line);border-radius:7px;flex-shrink:0}
+    .row .bone:last-child{margin-top:9px}
+    .action{width:100%;border:1px solid var(--line);border-radius:9px;background:var(--paper);min-height:46px;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;margin-top:18px;text-align:left}
+    .accordion-toggle{width:100%;min-height:50px;display:flex;justify-content:space-between;align-items:center;background:transparent;border:0;padding:8px 0;text-align:left}
+    .accordion-toggle .icon{transition:transform 200ms ease}
+    .accordion-toggle[aria-expanded=true] .icon{transform:rotate(90deg)}
+    .fold{display:grid;grid-template-rows:0fr;transition:grid-template-rows 220ms ease}
+    .fold.open{grid-template-rows:1fr}
+    .fold-inner{overflow:hidden;min-height:0}
+    .fold-content{padding:0 0 20px}
+    .note{color:var(--muted);font-size:13px;margin:0 0 18px}
+    .empty{min-height:320px;display:grid;place-content:center;justify-items:center;gap:16px;color:var(--muted)}
+    .empty .square{width:64px;height:64px;border-style:dashed}
+    .empty p{margin:0}
+    #overlay{position:absolute;inset:30px 0 0;z-index:5;display:flex;align-items:flex-end}
+    #overlay[hidden]{display:none}
+    .scrim{position:absolute;inset:0;background:#20283235}
+    .sheet{position:relative;width:100%;max-height:85%;overflow:auto;background:var(--paper);border-radius:22px 22px 0 0;padding:14px 20px 30px;border:1px solid var(--line);border-bottom:0}
+    .sheet-handle{width:34px;height:4px;border-radius:3px;background:var(--line);margin:0 auto 14px}
+    .sheet-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .sheet-header h2{font-size:17px;margin:0}
+    .sheet .lines{margin-bottom:26px}
+    .sheet .action{justify-content:center}
+    #status{display:block;text-align:center;font-size:12px;color:var(--muted);min-height:20px;margin-top:16px}
+    @media(max-width:420px){.workbench{padding:20px 12px 28px}.phone{padding:6px}.page-body{padding-inline:18px}.toolbar{gap:6px}.toolbar button,.toolbar select{padding-inline:10px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <main class="workbench">
+    <h1 class="heading">产品线框</h1>
+    <p class="caption">通用交互示例 · 骨架代表省略的内容，演示控件位于手机外。</p>
+    <div class="toolbar" id="toolbar" aria-label="演示控制">
+      <label>场景 <select id="scenario"><option value="default">默认</option><option value="empty">空状态</option><option value="partial">部分内容</option></select></label>
+      <button id="play" type="button">播放流程</button>
+      <button id="reset" type="button">重置</button>
+    </div>
+    <section class="phone" aria-label="手机线框">
+      <div class="screen">
+        <div class="device-bar" aria-hidden="true"><span class="camera"></span></div>
+        <div id="stage"></div>
+        <div id="overlay" hidden>
+          <div class="scrim" data-action="close-sheet"></div>
+          <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
+            <div class="sheet-handle" aria-hidden="true"></div>
+            <div class="sheet-header">
+              <h2 id="sheet-title">说明</h2>
+              <button class="icon-button" id="close-sheet" data-action="close-sheet" type="button" aria-label="关闭说明">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+              </button>
+            </div>
+            <div class="lines" aria-hidden="true"><span class="bone"></span><span class="bone"></span><span class="bone" style="--w:66%"></span></div>
+            <div class="lines" aria-hidden="true"><span class="bone small"></span><span class="bone small" style="--w:85%"></span></div>
+            <button class="action" data-action="close-sheet" type="button">关闭</button>
+          </section>
+        </div>
+      </div>
+    </section>
+    <output id="status" aria-live="polite"></output>
+  </main>
+  <script>
+  (() => {
+    'use strict';
+    const stage = document.querySelector('#stage');
+    const overlay = document.querySelector('#overlay');
+    const toolbar = document.querySelector('#toolbar');
+    const scenario = document.querySelector('#scenario');
+    const play = document.querySelector('#play');
+    const status = document.querySelector('#status');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    let scene = 'default';
+    let stack = [{ page: 'overview', expanded: false, scroll: 0, focus: '' }];
+    let sheetOpen = false;
+    let sheetClosing = false;
+    let returnFocus = null;
+    let playing = false;
+    let run = 0;
+    const current = () => stack[stack.length - 1];
+    const activePage = () => stage.lastElementChild;
+    const bone = (width = '100%', size = '') => `<span class="bone ${size}" style="--w:${width}" aria-hidden="true"></span>`;
+    const chevron = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+    const backIcon = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg>';
+    const infoIcon = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v.5"/></svg>';
+
+    // Adapt these page states and labels to the product brief.
+    function markup(state) {
+      const detail = state.page === 'detail';
+      const rows = count => Array.from({length: count}, (_, i) => `<div class="row" aria-hidden="true"><span class="square"></span><div class="lines">${bone(i % 2 ? '58%' : '74%')}${bone('44%', 'small')}</div></div>`).join('');
+      let content;
+      if (scene === 'empty') {
+        content = '<div class="empty"><span class="square" aria-hidden="true"></span><p>暂无内容</p></div>';
+      } else if (detail) {
+        content = `${scene === 'partial' ? '<p class="note">部分内容待补全</p>' : ''}<div class="lines" aria-hidden="true">${bone('48%', 'large')}${bone('74%', 'small')}</div><h3>明细</h3><div class="section">${rows(7)}</div>`;
+      } else {
+        content = `${scene === 'partial' ? '<p class="note">部分内容待补全</p>' : ''}<div class="summary" aria-hidden="true"><div class="ring">${scene === 'partial' ? '—' : bone('35%', 'large')}</div><div class="lines">${bone('70%', 'large')}${bone('88%', 'small')}${bone('56%', 'small')}</div></div>
+          <h3>概览</h3><div class="section">${rows(2)}</div>
+          <div class="accordion"><button id="expand" class="accordion-toggle" type="button" data-action="expand" aria-expanded="${state.expanded}" aria-controls="extra-content">更多内容${chevron}</button><div id="extra-content" class="fold ${state.expanded ? 'open' : ''}" ${state.expanded ? '' : 'inert'}><div class="fold-inner"><div class="fold-content">${rows(3)}</div></div></div></div>
+          <button id="open-detail" type="button" class="action" data-action="detail">查看明细${chevron}</button>`;
+      }
+      return `<header class="nav">${detail ? `<button id="back" type="button" class="icon-button" data-action="back" aria-label="返回概览">${backIcon}</button>` : '<span></span>'}<h2 id="page-title" tabindex="-1">${detail ? '明细' : '概览'}</h2><button id="open-sheet" type="button" class="icon-button" data-action="sheet" aria-label="查看说明">${infoIcon}</button></header><div class="page-body">${content}</div>`;
+    }
+
+    function animate(element, frames, duration = 250) {
+      const animation = element.animate(frames, { duration: reduced.matches ? 1 : duration, easing: 'cubic-bezier(.22,.75,.16,1)' });
+      return animation.finished.catch(() => {});
+    }
+
+    function render(direction = 'none', focus = false) {
+      const previous = activePage();
+      const next = document.createElement('article');
+      next.className = 'page';
+      next.dataset.page = current().page;
+      next.innerHTML = markup(current());
+      if (previous && direction !== 'none') {
+        previous.inert = true;
+        stage.replaceChildren(previous, next);
+        const forward = direction === 'forward';
+        animate(previous, [{transform:'translateX(0)', opacity:1}, {transform:`translateX(${forward ? '-20%' : '35%'})`, opacity:0}]).then(() => previous.remove());
+        animate(next, [{transform:`translateX(${forward ? '100%' : '-25%'})`, opacity:0}, {transform:'translateX(0)', opacity:1}]);
+      } else {
+        stage.replaceChildren(next);
+      }
+      next.querySelector('.page-body').scrollTop = current().scroll;
+      if (focus) (next.querySelector(current().focus ? '#' + current().focus : '#page-title') || next.querySelector('#page-title')).focus({preventScroll:true});
+    }
+
+    function save() {
+      current().scroll = activePage().querySelector('.page-body').scrollTop;
+    }
+
+    function pushDetail(trigger) {
+      save();
+      current().focus = trigger ? trigger.id : 'open-detail';
+      stack.push({page:'detail', expanded:false, scroll:0, focus:''});
+      render('forward', true);
+    }
+
+    function back() {
+      if (stack.length === 1) return;
+      stack.pop();
+      render('back', true);
+    }
+
+    function expand() {
+      const state = current();
+      state.expanded = !state.expanded;
+      const button = activePage().querySelector('#expand');
+      const content = activePage().querySelector('#extra-content');
+      button.setAttribute('aria-expanded', String(state.expanded));
+      content.inert = !state.expanded;
+      content.classList.toggle('open', state.expanded);
+    }
+
+    function openSheet(trigger) {
+      if (sheetOpen) return;
+      sheetOpen = true;
+      returnFocus = trigger || activePage().querySelector('#open-sheet');
+      overlay.hidden = false;
+      stage.inert = true;
+      toolbar.inert = true;
+      overlay.querySelector('#close-sheet').focus({preventScroll:true});
+      animate(overlay.querySelector('.scrim'), [{opacity:0}, {opacity:1}], 200);
+      animate(overlay.querySelector('.sheet'), [{transform:'translateY(100%)'}, {transform:'translateY(0)'}], 240);
+    }
+
+    async function closeSheet(immediate = false) {
+      if (!sheetOpen || sheetClosing) return;
+      sheetClosing = true;
+      if (!immediate) {
+        // Read the current position if the opening animation is interrupted.
+        const panel = overlay.querySelector('.sheet');
+        const scrim = overlay.querySelector('.scrim');
+        const from = getComputedStyle(panel).transform;
+        const opacity = getComputedStyle(scrim).opacity;
+        panel.getAnimations().forEach(animation => animation.cancel());
+        scrim.getAnimations().forEach(animation => animation.cancel());
+        await Promise.all([
+          animate(panel, [{transform:from}, {transform:'translateY(100%)'}], 200),
+          animate(scrim, [{opacity}, {opacity:0}], 200)
+        ]);
+      } else {
+        overlay.getAnimations({subtree:true}).forEach(animation => animation.cancel());
+      }
+      overlay.hidden = true;
+      stage.inert = false;
+      toolbar.inert = false;
+      sheetOpen = false;
+      sheetClosing = false;
+      if (returnFocus && returnFocus.isConnected) returnFocus.focus({preventScroll:true});
+      returnFocus = null;
+    }
+
+    function stopTour(message = '') {
+      run += 1;
+      playing = false;
+      play.textContent = '播放流程';
+      status.textContent = message;
+    }
+
+    async function reset() {
+      stopTour();
+      await closeSheet(true);
+      scene = scenario.value;
+      stack = [{page:'overview', expanded:false, scroll:0, focus:''}];
+      render();
+    }
+
+    async function tour() {
+      if (playing) { stopTour('已停止'); return; }
+      scenario.value = 'default';
+      await reset();
+      const token = ++run;
+      playing = true;
+      play.textContent = '停止演示';
+      status.textContent = '展开 → 明细 → 说明 → 返回';
+      const steps = [
+        () => expand(),
+        () => { const button = activePage().querySelector('#open-detail'); button.scrollIntoView({block:'nearest'}); pushDetail(button); },
+        () => openSheet(),
+        () => closeSheet(),
+        () => back(),
+        () => expand()
+      ];
+      for (const step of steps) {
+        await new Promise(resolve => setTimeout(resolve, reduced.matches ? 250 : 850));
+        if (token !== run) return;
+        await step();
+      }
+      if (token === run) stopTour('演示结束');
+    }
+
+    stage.addEventListener('click', event => {
+      const target = event.target.closest('[data-action]');
+      if (!target || target.closest('[inert]')) return;
+      stopTour();
+      const action = target.dataset.action;
+      if (action === 'detail') pushDetail(target);
+      if (action === 'back') back();
+      if (action === 'expand') expand();
+      if (action === 'sheet') openSheet(target);
+    });
+    overlay.addEventListener('click', event => {
+      if (!event.target.closest('[data-action="close-sheet"]')) return;
+      stopTour();
+      closeSheet();
+    });
+    // Let user input take control of the prototype, including scrolling.
+    for (const name of ['pointerdown', 'wheel', 'keydown']) {
+      document.querySelector('.phone').addEventListener(name, () => { if (playing) stopTour('已停止'); }, {passive:true});
+    }
+    document.addEventListener('keydown', event => {
+      if (!sheetOpen) return;
+      if (event.key === 'Escape') { event.preventDefault(); stopTour(); closeSheet(); }
+      if (event.key === 'Tab') {
+        const buttons = [...overlay.querySelectorAll('button:not(:disabled)')];
+        const first = buttons[0], last = buttons[buttons.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    });
+    scenario.addEventListener('change', reset);
+    document.querySelector('#reset').addEventListener('click', reset);
+    play.addEventListener('click', tour);
+    render();
+  })();
+  </script>
+</body>
+</html>

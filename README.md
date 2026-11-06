@@ -48,6 +48,7 @@ these files do not install tools. See [source, usage, and updates](./docs/apple-
 | [`hallmark-study`](./skills/design/hallmark-study/) | Extract reusable design DNA from a screenshot or public URL without cloning protected content. |
 | [`hallmark-build`](./skills/design/hallmark-build/) | Design and implement distinctive web UI while preserving the existing product system. |
 | [`hallmark-audit`](./skills/design/hallmark-audit/) | Audit UI code and rendered evidence for hierarchy, accessibility, responsiveness, trust, and implementation risk. |
+| [`product-wireframes`](./skills/design/product-wireframes/) | Turn product requirements into interactive 2D wireframes, with skeleton content, motion, browser checks, and optional Feishu publishing. |
 
 The Hallmark workflow is intentionally split into three explicit skills:
 
@@ -121,7 +122,8 @@ skills/
 │   ├── design-direction/
 │   ├── hallmark-audit/
 │   ├── hallmark-build/
-│   └── hallmark-study/
+│   ├── hallmark-study/
+│   └── product-wireframes/
 ├── engineering/
 │   └── open-source-contribution/
 └── productivity/

@@ -47,6 +47,7 @@ Skill 都可独立安装。
 | [`hallmark-study`](./skills/design/hallmark-study/) | 从截图或公开 URL 提取可复用的设计 DNA，同时避免复制受保护内容。 |
 | [`hallmark-build`](./skills/design/hallmark-build/) | 在保留现有产品系统的前提下设计并实现有辨识度的 Web UI。 |
 | [`hallmark-audit`](./skills/design/hallmark-audit/) | 从代码与渲染证据审计层级、可访问性、响应式、可信度和实现风险。 |
+| [`product-wireframes`](./skills/design/product-wireframes/) | 将产品需求转为可交互的二维骨架线框，包含动效、浏览器检查和可选飞书发布。 |
 
 Hallmark 工作流被有意拆分为三个需要明确调用的 Skill：
 
@@ -119,7 +120,8 @@ skills/
 │   ├── design-direction/
 │   ├── hallmark-audit/
 │   ├── hallmark-build/
-│   └── hallmark-study/
+│   ├── hallmark-study/
+│   └── product-wireframes/
 ├── engineering/
 │   └── open-source-contribution/
 └── productivity/

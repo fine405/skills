@@ -1,0 +1,4 @@
+interface:
+  display_name: "产品线框稿"
+  short_description: "把产品需求画成可交互的二维骨架线框，交付关键图与独立 HTML"
+  default_prompt: "请用 $product-wireframes，把这份需求整理成二维交互线框，内容用骨架占位，演示主要操作和动效，保持既定功能范围。"

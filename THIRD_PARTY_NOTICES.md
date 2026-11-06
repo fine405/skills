@@ -48,3 +48,15 @@ The export contains no standalone license file. This repository's MIT License
 does not apply to Apple's files; no additional rights to Apple's content are
 granted. Codex entry points and metadata are original integration material.
 See [export, compatibility, and update notes](./docs/apple-xcode-skills.md).
+
+## Product Wireframes
+
+The `product-wireframes` skill is inspired by
+[Hairline](https://hairline.lucasmarkes.com/) and its
+[skill workflow](https://hairline.lucasmarkes.com/skills), created by Lucas Marques.
+It applies line-based presentation, interaction feedback, browser checks, and
+single-file delivery to two-dimensional product wireframes.
+
+The workflow instructions and HTML template are independently written. This
+skill does not include or use Hairline's drawing engine, figures, or skill files.
+Hairline remains a separate project; no affiliation is implied.
